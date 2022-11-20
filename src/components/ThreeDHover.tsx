@@ -55,6 +55,7 @@ const ThreeDHover = ({ children, extraStyles }: Props) => {
 
       /* Apply the calculated transformation */
       if (el) el.style.transform = string;
+      if (el) el.classList.add("shadow-lg");
       //   if (el) el.style.transition = "ease-in-out 0.5s linear";
     }
 
@@ -63,6 +64,7 @@ const ThreeDHover = ({ children, extraStyles }: Props) => {
       if (el)
         el.style.transform =
           "perspective(500px) scale(1) rotateX(0) rotateY(0)";
+      if (el) el.classList.remove("shadow-lg");
     });
 
     /* Add listener for mousedown event, to simulate click */
@@ -83,7 +85,7 @@ const ThreeDHover = ({ children, extraStyles }: Props) => {
   return (
     <div
       ref={elem}
-      className={`max-w-[70px] select-none transition-all duration-500 absolute ${extraStyles}`}>
+      className={`max-w-[70px] select-none transition-all duration-500 rounded-3xl absolute ${extraStyles}`}>
       {children}
     </div>
   );

@@ -3,14 +3,24 @@ import Head from "next/head";
 import Image from "next/image";
 import ThreeDHover from "../src/components/ThreeDHover";
 import Navbar from "../src/components/Navbar";
+import Loader from "../src/components/Loader";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 const Home: NextPage = () => {
+  const [showLoader, setShowLoader] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 3000);
+  }, []);
   return (
     <>
       <Head>
         <title>Sabin Baniya | Personal Portfolio Website</title>
       </Head>
       <>
+        <AnimatePresence>{showLoader && <Loader />}</AnimatePresence>
         <Navbar />
         <section className='px-12'>
           <section className='flex justify-between items-center min-h-[88vh]'>
@@ -31,7 +41,7 @@ const Home: NextPage = () => {
                 Know More
               </button>
             </div>
-            <div className='relative select-none'>
+            <div className='relative select-none mt-20'>
               <Image
                 src='/hero.png'
                 className='max-w-[500px] pointer-events-none select-none'
@@ -39,7 +49,7 @@ const Home: NextPage = () => {
                 height={1484.47}
                 width={982.58}
               />
-              <ThreeDHover extraStyles='-left-8 -top-10'>
+              <ThreeDHover extraStyles='-left-8 -top-10 shadow-teal-500/70'>
                 <Image
                   src='/react.png'
                   className='pointer-events-none'
@@ -48,7 +58,7 @@ const Home: NextPage = () => {
                   width={313}
                 />
               </ThreeDHover>
-              <ThreeDHover extraStyles='-right-8 -top-10'>
+              <ThreeDHover extraStyles='-right-8 -top-10 shadow-gray-500'>
                 <Image
                   src='/next.png'
                   className='pointer-events-none'
@@ -57,7 +67,7 @@ const Home: NextPage = () => {
                   width={313}
                 />
               </ThreeDHover>
-              <ThreeDHover extraStyles='-left-4 top-20'>
+              <ThreeDHover extraStyles='-left-4 top-20 shadow-lime-500/70'>
                 <Image
                   src='/node.png'
                   className='pointer-events-none'
@@ -66,7 +76,7 @@ const Home: NextPage = () => {
                   width={313}
                 />
               </ThreeDHover>
-              <ThreeDHover extraStyles='left-16 -top-24'>
+              <ThreeDHover extraStyles='left-16 -top-24 shadow-sky-500/70'>
                 <Image
                   src='/tailwind.png'
                   className='pointer-events-none'
@@ -75,7 +85,7 @@ const Home: NextPage = () => {
                   width={313}
                 />
               </ThreeDHover>
-              <ThreeDHover extraStyles='right-20 -top-32'>
+              <ThreeDHover extraStyles='right-20 -top-32 shadow-blue-500/70'>
                 <Image
                   src='/vscode.png'
                   className='pointer-events-none'
