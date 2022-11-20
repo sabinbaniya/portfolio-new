@@ -13,7 +13,12 @@ const icon = {
 const Loader = () => {
   return (
     <motion.section
-      exit={{ opacity: 0, zIndex: -10 }}
+      exit={{
+        opacity: 0,
+        backgroundColor: "#070c12",
+        scale: 0,
+        zIndex: 0,
+      }}
       className='fixed inset-0 bg-black z-10 flex justify-center items-center'>
       <svg
         width='33'
