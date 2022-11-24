@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import GradientButton from "./GradientButton";
 
 const Navbar = () => {
   return (
@@ -21,15 +22,7 @@ const Navbar = () => {
         </div>
         <div className='font-semibold'>
           <a href='#contact'>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{
-                bounce: 1,
-              }}
-              className='gradient-button px-6 py-2 rounded-md'>
-              Contact Me
-            </motion.button>
+            <GradientButton text='Contact Me' />
           </a>
         </div>
       </nav>

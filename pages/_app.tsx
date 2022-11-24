@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Montserrat } from "@next/font/google";
+import "@splidejs/react-splide/css";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

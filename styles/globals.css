@@ -6,6 +6,7 @@ html,
 body {
   background-color: #070c12;
   color: whitesmoke;
+  overflow-x: hidden;
 }
 
 .gradient-button {
@@ -20,6 +21,31 @@ body {
   box-shadow: 2px 1000px 1px #070c12 inset;
 }
 
+.gradient-button-extra {
+  box-shadow: 2px 1000px 1px #1f2937 inset;
+}
+
+/* .gradient-button-extra {
+  box-shadow: 2px 1000px 1px #1f2937 inset ; */
+/* } */
+
 .gradient-button:hover {
   box-shadow: none;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 3px whitesmoke;
+  position: relative;
+}
+.text-stroke-white::after {
+  content: attr(data-text);
+  color: #070c12;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-text-stroke: 0px whitesmoke;
+}
+
+.secondary_heading_style {
+  @apply text-[10rem] whitespace-nowrap font-black text-[#070c12] text-stroke-white;
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import ThreeDHover from "./ThreeDHover";
 import { motion } from "framer-motion";
 import { delayForLoading } from "../constants";
+import PrimaryButton from "./PrimaryButton";
 
 const floatingImagesTransition = {
   duration: 3,
@@ -26,18 +27,13 @@ const HeroSection = () => {
             Welcome, I&apos;m Sabin
           </h1>
         </div>
-        <p className='font-normal text-base leading-8 max-w-lg'>
+        <p className='font-normal text-base tracking-wide leading-relaxed max-w-lg'>
           I&apos;m a full-stack web developer &amp; designer, based in Pokhara,
           Nepal. I have been building things on web since 2020. I love building
           performant & elegant web applications that delights all users. Contact
           me below to discuss your ideas.
         </p>
-        <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className='bg-primary-blue px-8 py-2 rounded-md font-semibold hover:shadow-lg hover:shadow-primary-blue/70'>
-          Know More
-        </motion.button>
+        <PrimaryButton text='Know More' />
       </div>
       <div className='relative select-none mt-20'>
         <Image
@@ -114,7 +110,7 @@ const HeroSection = () => {
             ...floatingImagesTransition,
             repeatDelay: 0.75,
           }}>
-          <ThreeDHover extraStyles='shadow-gray-500/70'>
+          <ThreeDHover extraStyles='shadow-lime-500/70'>
             <Image
               src='/node.png'
               className='pointer-events-none max-w-[70px]'
@@ -140,7 +136,7 @@ const HeroSection = () => {
             ...floatingImagesTransition,
             repeatDelay: 0.25,
           }}>
-          <ThreeDHover extraStyles='shadow-gray-500/70'>
+          <ThreeDHover extraStyles='shadow-blue-500/70'>
             <Image
               src='/tailwind.png'
               className='pointer-events-none max-w-[70px]'
@@ -166,7 +162,7 @@ const HeroSection = () => {
             ...floatingImagesTransition,
             repeatDelay: 0.75,
           }}>
-          <ThreeDHover extraStyles='shadow-gray-500/70'>
+          <ThreeDHover extraStyles='shadow-blue-500/70'>
             <Image
               src='/vscode.png'
               className='pointer-events-none max-w-[70px]'

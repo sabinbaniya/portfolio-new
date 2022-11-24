@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { delayForLoading } from "../src/constants";
 import HeroSection from "../src/components/HeroSection";
+import AboutSection from "../src/components/AboutSection";
+import WorkSection from "../src/components/WorkSection";
 
 const Home: NextPage = () => {
   const [showLoader, setShowLoader] = useState(true);
@@ -26,6 +28,8 @@ const Home: NextPage = () => {
         <Navbar />
         <section className='px-12'>
           <HeroSection />
+          <AboutSection />
+          <WorkSection />
         </section>
       </>
     </>
