@@ -80,10 +80,10 @@ const ContactSection = () => {
               <input
                 id='name'
                 {...register("name", { required: "Please fill in your name" })}
-                className={`bg-background outline outline-[6px] rounded-xl p-4 outline-[#272727] h-12 w-full  autofill:bg-background transition-all ${
+                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-none active:outline-none  autofill:bg-background transition-all  placeholder:font-semibold ${
                   errors.name
-                    ? "outline-red-600 placeholder:text-red-800 form-error"
-                    : "focus:outline-[#3d3d3d]"
+                    ? "border-red-600 placeholder:text-red-800 form-error"
+                    : "focus:border-[#3d3d3d]"
                 }`}
                 placeholder='John Doe'
               />
@@ -107,10 +107,10 @@ const ContactSection = () => {
                   },
                 })}
                 placeholder='john@gmail.com'
-                className={`bg-background outline outline-[6px] rounded-xl p-4 outline-[#272727] h-12 w-full  autofill:bg-background transition-all ${
+                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-none active:outline-none autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.email
-                    ? "outline-red-600 placeholder:text-red-800 text-red-600 form-error"
-                    : "focus:outline-[#3d3d3d]"
+                    ? "border-red-600 placeholder:text-red-800 text-red-600 form-error"
+                    : "focus:border-[#3d3d3d]"
                 }`}
               />
             </div>
@@ -128,10 +128,10 @@ const ContactSection = () => {
                   required: "Please fill in your messaage",
                 })}
                 rows={7}
-                className={`bg-background outline outline-[6px] rounded-xl p-4 outline-[#272727] w-full resize-none  autofill:bg-background transition-all ${
+                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-none active:outline-none autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.message
-                    ? "outline-red-600 placeholder:text-red-800 form-error"
-                    : "focus:outline-[#3d3d3d]"
+                    ? "border-red-600 placeholder:text-red-800 form-error"
+                    : "focus:border-[#3d3d3d]"
                 }`}
                 placeholder="I'd like to talk to you about..."
               />

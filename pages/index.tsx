@@ -2,22 +2,23 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../src/components/Navbar";
 import Loader from "../src/components/Loader";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { delayForLoading } from "../src/constants";
 import HeroSection from "../src/components/HeroSection";
 import AboutSection from "../src/components/AboutSection";
 import WorkSection from "../src/components/WorkSection";
 import ContactSection from "../src/components/ContactSection";
+import Footer from "../src/components/Footer";
 
 const Home: NextPage = () => {
-  const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowLoader(false);
-  //   }, delayForLoading * 1000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLoader(false);
+    }, delayForLoading * 1000);
+  }, []);
 
   return (
     <>
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
           <WorkSection />
           <ContactSection />
         </section>
+        <Footer />
       </>
     </>
   );
