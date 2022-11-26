@@ -5,7 +5,7 @@ import GradientButton from "./GradientButton";
 const Navbar = () => {
   return (
     <>
-      <nav className='backdrop-blur-lg flex justify-between items-center px-8 border-b border-b-gray-600 min-h-[12vh] max-h-[12vh] sticky top-0'>
+      <nav className='backdrop-blur-md flex justify-between items-center px-8 border-b border-b-gray-600 min-h-[12vh] max-h-[12vh] fixed top-0 left-0 right-0 z-50 bg-background/50'>
         <div className='my-4'>
           <Image
             src='/logo.png'

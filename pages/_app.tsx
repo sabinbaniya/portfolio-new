@@ -27,7 +27,7 @@ const montserrat = Montserrat({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <main className={`${montserrat.variable} font-sans`}>
+      <main className={`${montserrat.variable} font-sans relative`}>
         <Component {...pageProps} />
       </main>
     </>

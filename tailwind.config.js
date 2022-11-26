@@ -12,6 +12,8 @@ module.exports = {
       colors: {
         "primary-blue": "#004DCA",
         "primary-light-blue": "#649FFF",
+        background: "#070c12",
+        text: "#f5f5f5",
       },
       fontFamily: {
         sans: ["var(--font-montserrat)", ...fontFamily.sans],

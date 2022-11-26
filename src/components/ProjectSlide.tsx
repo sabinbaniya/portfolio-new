@@ -12,7 +12,7 @@ const ProjectSlide = ({ image, project_name, tags, brief }: Props) => {
   return (
     <>
       <div
-        className='flex max-w-[45vw] bg-no-repeat bg-cover rounded-2xl min-h-[350px] overflow-hidden'
+        className='flex max-w-[45vw] bg-no-repeat bg-cover rounded-2xl min-h-[350px] overflow-hidden hover:cursor-grab active:cursor-grabbing'
         style={{
           backgroundImage: `url(${image})`,
         }}>

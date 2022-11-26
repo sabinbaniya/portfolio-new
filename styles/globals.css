@@ -5,7 +5,7 @@
 html,
 body {
   background-color: #070c12;
-  color: whitesmoke;
+  color: #f5f5f5;
   overflow-x: hidden;
 }
 
@@ -46,6 +46,23 @@ body {
   -webkit-text-stroke: 0px whitesmoke;
 }
 
+.form-error {
+  animation: formError 0.5s ease-in-out forwards 2;
+  transition: all;
+}
+
 .secondary_heading_style {
   @apply text-[10rem] whitespace-nowrap font-black text-[#070c12] text-stroke-white;
+}
+
+@keyframes formError {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }

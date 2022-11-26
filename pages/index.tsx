@@ -8,15 +8,16 @@ import { delayForLoading } from "../src/constants";
 import HeroSection from "../src/components/HeroSection";
 import AboutSection from "../src/components/AboutSection";
 import WorkSection from "../src/components/WorkSection";
+import ContactSection from "../src/components/ContactSection";
 
 const Home: NextPage = () => {
-  const [showLoader, setShowLoader] = useState(true);
+  const [showLoader, setShowLoader] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowLoader(false);
-    }, delayForLoading * 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowLoader(false);
+  //   }, delayForLoading * 1000);
+  // }, []);
 
   return (
     <>
@@ -26,10 +27,11 @@ const Home: NextPage = () => {
       <>
         <AnimatePresence>{showLoader && <Loader />}</AnimatePresence>
         <Navbar />
-        <section className='px-12'>
+        <section className='px-12 pt-[12vh]'>
           <HeroSection />
           <AboutSection />
           <WorkSection />
+          <ContactSection />
         </section>
       </>
     </>

@@ -24,10 +24,10 @@ const WorkSection = () => {
           </SplideSlide>
           <SplideSlide>
             <ProjectSlide
-              image='/gaintplay.png'
-              brief='We built a whole new platform on the web from scratch, for existing gaintplay users on mobile.'
-              tags={["UI/UX", "Development"]}
-              project_name='Gaintplay'
+              image='/blog.png'
+              brief='A website for writing and reading blog posts, that supports mardown & syntax highlighting.'
+              tags={["Development"]}
+              project_name='Blog'
             />
           </SplideSlide>
           <SplideSlide>

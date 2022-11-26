@@ -19,7 +19,7 @@ const Loader = () => {
         scale: 0,
         zIndex: 0,
       }}
-      className='fixed inset-0 bg-black z-10 flex justify-center items-center'>
+      className='fixed inset-0 bg-black z-[60] flex justify-center items-center'>
       <svg
         width='33'
         height='58'
