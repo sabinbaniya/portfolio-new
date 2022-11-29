@@ -17,28 +17,30 @@ const AnimatedContactIcons = ({ text, pathD }: Props) => {
   const iconAnimationControls = useAnimationControls();
   return (
     <motion.li
-      className='cursor-pointer flex items-center justify-between'
+      className="cursor-pointer flex items-center justify-between"
       onHoverStart={() => {
         iconAnimationControls.set(iconAnimationVariants.init);
         iconAnimationControls.start(iconAnimationVariants.anim);
-      }}>
+      }}
+    >
       <span>{text}</span>
       <svg
-        width='30'
-        height='25'
-        viewBox='0 0 71 63'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'>
+        width="30"
+        height="25"
+        viewBox="0 0 71 63"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <motion.path
           initial={iconAnimationVariants.anim}
           animate={iconAnimationControls}
           transition={{ duration: 1.5 }}
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule="evenodd"
+          clipRule="evenodd"
           d={pathD}
-          stroke='white'
-          stroke-width='3'
-          stroke-linejoin='round'
+          stroke="white"
+          strokeWidth="3"
+          strokeLinejoin="round"
         />
       </svg>
     </motion.li>

@@ -13,71 +13,81 @@ const svgIconDValues = {
 
 const Footer = () => {
   return (
-    <footer className='relative min-h-[65vh] overflow-hidden'>
-      <div className='w-64 h-64 bg-primary-blue/50 absolute -top-20 -left-20 rounded-full '></div>
-      <div className='w-64 h-64 bg-primary-light-blue/50 absolute -bottom-20 -right-20 rounded-full '></div>
-      <section className='border-t border-t-gray-600 px-12 backdrop-blur-[70px] absolute inset-0 pt-20 flex flex-col justify-between items-center'>
-        <section className='grid grid-cols-4 items-start place-items-center'>
-          <div className='w-full'>
-            <p className='text-xl font-semibold'>Sign Up for Newsletter</p>
-            <p className='text-sm mt-2'>
-              Your weekly dose of Javascript content. No spam, I promise
-            </p>
-            <div className='mt-6 w-full'>
-              <NewsletterForm />
-            </div>
-          </div>
-          <div className='pl-8'>
-            <p className='cursor-default text-xl font-semibold mb-2'>Blogs</p>
-            <div className='space-y-4 mt-6'>
+    <footer className="relative min-h-[65vh] overflow-hidden">
+      <div className="w-64 h-64 bg-primary-blue/50 absolute -top-20 -left-20 rounded-full "></div>
+      <div className="w-64 h-64 bg-primary-light-blue/50 absolute -bottom-20 -right-20 rounded-full "></div>
+      <section className="border-t border-t-gray-600 px-12 backdrop-blur-[70px] absolute inset-0 pt-20">
+        <section className="flex justify-between items-start">
+          <div className="pl-8 basis-[35%]">
+            <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
+            <div className="space-y-4 mt-6">
               <BlogLink
-                image_url='/gaintplay.png'
-                title='Blog title 1'
+                image_url="/gaintplay.png"
+                title="Blog title 1"
                 description="Description about the above blog, a very looooooooong blog's short description"
-                date='2022/09/12'
+                date="2022/09/12"
               />
               <BlogLink
-                image_url='/gaintplay.png'
-                title='Blog title 1'
+                image_url="/gaintplay.png"
+                title="Blog title 1"
                 description="Description about the above blog, a very looooooooong blog's short description"
-                date='2022/09/12'
+                date="2022/09/12"
               />
               <BlogLink
-                image_url='/gaintplay.png'
-                title='Blog title 1'
+                image_url="/gaintplay.png"
+                title="Blog title 1"
                 description="Description about the above blog, a very looooooooong blog's short description"
-                date='2022/09/12'
+                date="2022/09/12"
               />
             </div>
           </div>
-          <div>
-            <p className='cursor-default text-xl font-semibold mb-2'>Sitemap</p>
-            <ul className='font-medium space-y-3 mt-6'>
-              <li>Home</li>
-              <li>About</li>
-              <li>Work</li>
-              <li>Blog</li>
-              <li>Contact</li>
+          <div className="">
+            <p className="cursor-default text-xl font-semibold mb-2">Sitemap</p>
+            <ul className="font-medium space-y-3 mt-6">
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#work">Work</a>
+              </li>
+              <li>
+                <a href="#blog">Blog</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
           </div>
-          <div>
-            <p className='cursor-default text-xl font-semibold mb-2'>
+          <div className="">
+            <p className="cursor-default text-xl font-semibold mb-2">
               Connect via
             </p>
-            <ul className='space-y-3 mt-6 font-medium'>
+            <ul className="space-y-3 mt-6 font-medium max-w-[120px]">
               <AnimatedContactIcons
-                text='Twitter'
+                text="Twitter"
                 pathD={svgIconDValues.twitter}
               />
               <AnimatedContactIcons
-                text='Github'
+                text="Github"
                 pathD={svgIconDValues.github}
               />
-              <AnimatedContactIcons text='Email' pathD={svgIconDValues.email} />
+              {/* <AnimatedContactIcons text="Email" pathD={svgIconDValues.email} /> */}
             </ul>
           </div>
+          <div className="">
+            <p className="text-xl font-semibold">Sign Up for Newsletter</p>
+            <p className="text-sm mt-6">
+              Your weekly dose of Javascript content. No spam, I promise
+            </p>
+            <div className="mt-4 w-full">
+              <NewsletterForm />
+            </div>
+          </div>
         </section>
-        <div className='font-light pt-10 pb-20'>
+        <div className="font-light pt-10 pb-20 text-center">
           <span>Copyright &copy; Sabin Baniya {new Date().getFullYear()}</span>
         </div>
       </section>

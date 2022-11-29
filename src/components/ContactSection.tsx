@@ -56,48 +56,52 @@ const ContactSection = () => {
     }
   };
   return (
-    <>
+    <section className="scroll-mt-20" id="contact">
       <motion.p
         // style={{ translateX: -translateVal + 100 }}
-        data-text='Get in touch'
-        className='secondary_heading_style'>
+        data-text="Get in touch"
+        className="secondary_heading_style"
+      >
         Get in touch
       </motion.p>
-      <section className='flex mb-20'>
-        <div className='basis-1/2'></div>
-        <div className='basis-1/2'>
+      <section className="flex mb-20">
+        <div className="basis-1/2"></div>
+        <div className="basis-1/2">
           <form
             onSubmit={handleSubmit(onsubmit)}
-            className='space-y-6 max-w-lg'>
-            <div className='flex flex-col justify-start space-y-2'>
+            className="space-y-6 max-w-lg"
+          >
+            <div className="flex flex-col justify-start space-y-2">
               <label
-                htmlFor='name'
+                htmlFor="name"
                 className={`text-lg font-semibold ${
                   errors.name ? "text-red-600 form-error" : ""
-                }`}>
+                }`}
+              >
                 Name
               </label>
               <input
-                id='name'
+                id="name"
                 {...register("name", { required: "Please fill in your name" })}
-                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-none active:outline-none  autofill:bg-background transition-all  placeholder:font-semibold ${
+                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-0 active:outline-0  autofill:bg-background transition-all  placeholder:font-semibold ${
                   errors.name
                     ? "border-red-600 placeholder:text-red-800 form-error"
                     : "focus:border-[#3d3d3d]"
                 }`}
-                placeholder='John Doe'
+                placeholder="Your Name"
               />
             </div>
-            <div className='flex flex-col justify-start space-y-2'>
+            <div className="flex flex-col justify-start space-y-2">
               <label
-                htmlFor='email'
+                htmlFor="email"
                 className={`text-lg font-semibold ${
                   errors.email ? "text-red-600 form-error" : ""
-                }`}>
+                }`}
+              >
                 Contact Email
               </label>
               <input
-                id='email'
+                id="email"
                 {...register("email", {
                   required: "Please fill in your email",
                   pattern: {
@@ -106,29 +110,30 @@ const ContactSection = () => {
                     message: "Please enter a valid email",
                   },
                 })}
-                placeholder='john@gmail.com'
-                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-none active:outline-none autofill:bg-background transition-all placeholder:font-semibold ${
+                placeholder="Your Email"
+                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.email
                     ? "border-red-600 placeholder:text-red-800 text-red-600 form-error"
                     : "focus:border-[#3d3d3d]"
                 }`}
               />
             </div>
-            <div className='flex flex-col justify-start space-y-2'>
+            <div className="flex flex-col justify-start space-y-2">
               <label
-                htmlFor='message'
+                htmlFor="message"
                 className={`text-lg font-semibold ${
                   errors.message ? "text-red-600 form-error" : ""
-                }`}>
+                }`}
+              >
                 Message
               </label>
               <textarea
-                id='message'
+                id="message"
                 {...register("message", {
                   required: "Please fill in your messaage",
                 })}
                 rows={7}
-                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-none active:outline-none autofill:bg-background transition-all placeholder:font-semibold ${
+                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.message
                     ? "border-red-600 placeholder:text-red-800 form-error"
                     : "focus:border-[#3d3d3d]"
@@ -140,7 +145,7 @@ const ContactSection = () => {
               <PrimaryButton
                 text={
                   submissionState === "loading" ? (
-                    <ScaleLoader color='#fff' height={22} />
+                    <ScaleLoader color="#fff" height={22} />
                   ) : submissionState === "submitted" ? (
                     <FormSubmittedAnimation />
                   ) : submissionState === "error" ? (
@@ -163,7 +168,7 @@ const ContactSection = () => {
           </form>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

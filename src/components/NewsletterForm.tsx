@@ -19,7 +19,8 @@ const NewsletterForm = () => {
     <>
       <form
         onSubmit={handleSubmit(onsubmit)}
-        className='space-y-4 flex flex-col w-full items-end'>
+        className="space-y-4 flex flex-col w-full items-end"
+      >
         <input
           {...register("email", {
             required: "Please provide your email",
@@ -29,14 +30,14 @@ const NewsletterForm = () => {
               message: "Please enter a valid email",
             },
           })}
-          className={`bg-transparent border-4 rounded-lg w-full p-4 border-[#272727] h-14 focus:outline-none active:outline-none transition-all placeholder:font-semibold ${
+          className={`bg-transparent border-4 rounded-lg w-full p-4 border-[#272727] h-14 focus:outline-0 active:outline-0 transition-all placeholder:font-semibold ${
             errors.email
               ? "border-red-600 placeholder:text-red-800"
               : "focus:border-[#3d3d3d]"
           }`}
-          placeholder='john@gmail.com'
+          placeholder="john@gmail.com"
         />
-        <PrimaryButton text='Subscribe' extraClasses='w-min' />
+        <PrimaryButton text="Subscribe" extraClasses="w-min" />
       </form>
     </>
   );

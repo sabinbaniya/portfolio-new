@@ -5,37 +5,38 @@ import ProjectSlider from "./ProjectSlider";
 
 const WorkSection = () => {
   return (
-    <section className='min-h-screen'>
+    <section className="scroll-mt-20" id="work">
       <motion.p
         // style={{ translateX: -translateVal + 100 }}
-        data-text='My Works'
-        className='secondary_heading_style'>
+        data-text="My Works"
+        className="secondary_heading_style"
+      >
         My Works
       </motion.p>
-      <section className=''>
+      <section className="">
         <ProjectSlider>
           <SplideSlide>
             <ProjectSlide
-              image='/gaintplay.png'
-              brief='We built a whole new platform on the web from scratch, for existing gaintplay users on mobile.'
+              image="/gaintplay.png"
+              brief="We built a whole new platform on the web from scratch, for existing gaintplay users on mobile."
               tags={["UI/UX", "Development"]}
-              project_name='Gaintplay'
+              project_name="Gaintplay"
             />
           </SplideSlide>
           <SplideSlide>
             <ProjectSlide
-              image='/blog.png'
-              brief='A website for writing and reading blog posts, that supports mardown & syntax highlighting.'
+              image="/blog.png"
+              brief="A website for writing and reading blog posts, that supports mardown & syntax highlighting."
               tags={["Development"]}
-              project_name='Blog'
+              project_name="Blog"
             />
           </SplideSlide>
           <SplideSlide>
             <ProjectSlide
-              image='/gaintplay.png'
-              brief='We built a whole new platform on the web from scratch, for existing gaintplay users on mobile.'
+              image="/gaintplay.png"
+              brief="We built a whole new platform on the web from scratch, for existing gaintplay users on mobile."
               tags={["UI/UX", "Development"]}
-              project_name='Gaintplay'
+              project_name="Gaintplay"
             />
           </SplideSlide>
         </ProjectSlider>

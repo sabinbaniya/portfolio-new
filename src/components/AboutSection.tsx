@@ -15,24 +15,25 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className='min-h-screen'>
+    <section className="scroll-mt-20" id="about">
       <motion.p
         style={{ translateX: -translateVal + 100 }}
-        data-text='Something About Me'
-        className='secondary_heading_style'>
+        data-text="Something About Me"
+        className="secondary_heading_style"
+      >
         Something About Me
       </motion.p>
-      <section className='flex justify-between items-start'>
+      <section className="flex justify-between items-start">
         <div>
           <Image
-            src='/hero2.png'
+            src="/hero2.png"
             height={438}
             width={300}
-            className='max-h-[50vh] w-auto'
-            alt=''
+            className="max-h-[50vh] w-auto"
+            alt=""
           />
         </div>
-        <div className='max-w-[553px] space-y-6 mr-40 mt-10 tracking-wide leading-relaxed'>
+        <div className="max-w-[553px] space-y-6 mr-40 mt-10 tracking-wide leading-relaxed">
           <p>
             Hey there 👋, I&apos;m Sabin Baniya. I&apos;m a web developer and
             designer here from Pokhara, Nepal. I love brainstorming new ideas
@@ -43,7 +44,7 @@ const AboutSection = () => {
             I&apos;m currently pursing my bachelor&apos;s degree in Software
             Engineering
           </p>
-          <PrimaryButton text='See My Work' />
+          <PrimaryButton text="See My Work" />
         </div>
       </section>
     </section>
