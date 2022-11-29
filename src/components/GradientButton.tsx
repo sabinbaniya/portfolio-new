@@ -14,8 +14,9 @@ const GradientButton = ({ text, fromProject }: Props) => {
         bounce: 1,
       }}
       className={`gradient-button px-6 py-2 rounded-md transition-all ${
-        fromProject ? "gradient-button-extra" : ""
-      }`}>
+        fromProject ? "gradient-button-extra text-sm" : ""
+      }`}
+    >
       {text}
     </motion.button>
   );

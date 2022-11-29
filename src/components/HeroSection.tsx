@@ -28,24 +28,24 @@ const HeroSection = () => {
       id="home"
     >
       <div className="space-y-8">
-        <div className="text-6xl font-black space-y-8 mt-8">
+        <div className="text-6xl font-black space-y-4">
           <h1>Hey there</h1>
           <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-primary-light-blue to-primary-light-blue">
             {greetings[0]} I&apos;m Sabin
           </h1>
         </div>
-        <p className="font-normal text-base tracking-wide leading-relaxed max-w-lg flex items-center space-x-4">
+        <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex items-center space-x-4">
           {/* I&apos;m a full-stack web developer &amp; designer, based in Pokhara,
           Nepal. I have been building things on web since 2020. I love building
           performant & elegant web applications that delights all users. Contact
           me below to discuss your ideas. */}
           <span className="whitespace-nowrap">Full-Stack Web Developer</span>{" "}
-          <Dot size={15} />
+          <Dot size={5} />
           <span className="whitespace-nowrap">UI/UX Designer</span>
-          <Dot size={15} />
+          <Dot size={5} />
           <span className="whitespace-nowrap">Tech Writer</span>
         </p>
-        <PrimaryButton text="Know More" />
+        <PrimaryButton text="Know More" linkProp="#about" />
       </div>
       <div className="relative select-none mt-20">
         <Image

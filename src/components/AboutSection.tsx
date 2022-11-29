@@ -33,18 +33,20 @@ const AboutSection = () => {
             alt=""
           />
         </div>
-        <div className="max-w-[553px] space-y-6 mr-40 mt-10 tracking-wide leading-relaxed">
+        <div className="max-w-[553px] space-y-6 mr-40 mt-10 tracking-wide leading-loose font-medium">
           <p>
             Hey there 👋, I&apos;m Sabin Baniya. I&apos;m a web developer and
             designer here from Pokhara, Nepal. I love brainstorming new ideas
-            about creating digital products & businesses. Apart from work I like
-            travelling & spending time with my friends.{" "}
+            about creating digital products & businesses.{" "}
+            <span className="text-gray-400">
+              Apart from work I like travelling & spending time with my friends.
+            </span>
           </p>
           <p>
             I&apos;m currently pursing my bachelor&apos;s degree in Software
             Engineering
           </p>
-          <PrimaryButton text="See My Work" />
+          <PrimaryButton text="See My Work" linkProp="#work" />
         </div>
       </section>
     </section>

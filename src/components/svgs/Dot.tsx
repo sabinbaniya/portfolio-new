@@ -5,11 +5,11 @@ const Dot = ({ size }: { size: number }) => {
     <svg
       width={size}
       height={size}
-      viewBox={`0 0 5 5`}
+      viewBox={`0 0 ${size} ${size}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="5" height="5" rx="2.5" fill="white" />
+      <rect width={size} height={size} rx={size / 2} fill="currentColor" />
     </svg>
   );
 };

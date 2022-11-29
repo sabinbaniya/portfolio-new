@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ScaleLoader } from "react-spinners";
 import FormSubmittedAnimation from "./FormSubmittedAnimation";
 import FormFailureAnimation from "./FormFailureAnimation";
+import Image from "next/image";
 
 interface FormInputs {
   name: string;
@@ -59,13 +60,21 @@ const ContactSection = () => {
     <section className="scroll-mt-20" id="contact">
       <motion.p
         // style={{ translateX: -translateVal + 100 }}
-        data-text="Get in touch"
+        data-text="Let's Talk"
         className="secondary_heading_style"
       >
-        Get in touch
+        Let&apos;s Talk
       </motion.p>
       <section className="flex mb-20">
-        <div className="basis-1/2"></div>
+        <div className="basis-1/2">
+          <Image
+            src="/hero2.png"
+            height={438}
+            width={300}
+            className="max-h-[50vh] w-auto"
+            alt=""
+          />
+        </div>
         <div className="basis-1/2">
           <form
             onSubmit={handleSubmit(onsubmit)}
