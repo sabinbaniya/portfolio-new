@@ -152,6 +152,7 @@ const ContactSection = () => {
             </div>
             <div>
               <PrimaryButton
+                renderAs="btn"
                 text={
                   submissionState === "loading" ? (
                     <ScaleLoader color="#fff" height={22} />

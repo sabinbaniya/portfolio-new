@@ -35,11 +35,10 @@ const HeroSection = () => {
           </h1>
         </div>
         <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex items-center space-x-4">
-          {/* I&apos;m a full-stack web developer &amp; designer, based in Pokhara,
-          Nepal. I have been building things on web since 2020. I love building
-          performant & elegant web applications that delights all users. Contact
-          me below to discuss your ideas. */}
-          <span className="whitespace-nowrap">Full-Stack Web Developer</span>{" "}
+          {/* . */}
+          <span className="whitespace-nowrap">
+            Full-Stack Web Developer
+          </span>{" "}
           <Dot size={5} />
           <span className="whitespace-nowrap">UI/UX Designer</span>
           <Dot size={5} />

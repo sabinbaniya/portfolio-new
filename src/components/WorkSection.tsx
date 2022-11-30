@@ -5,7 +5,7 @@ import ProjectSlider from "./ProjectSlider";
 
 const WorkSection = () => {
   return (
-    <section className="scroll-mt-20" id="work">
+    <section className="scroll-mt-20 my-20" id="work">
       <motion.p
         // style={{ translateX: -translateVal + 100 }}
         data-text="My Works"
