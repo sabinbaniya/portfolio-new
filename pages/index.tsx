@@ -1,41 +1,47 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../src/components/Navbar";
-import Loader from "../src/components/Loader";
-import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import { delayForLoading } from "../src/constants";
 import HeroSection from "../src/components/HeroSection";
 import AboutSection from "../src/components/AboutSection";
 import WorkSection from "../src/components/WorkSection";
 import ContactSection from "../src/components/ContactSection";
-import Footer from "../src/components/Footer";
+import { BlogPosts } from "../src/types";
+import medium_post_sample_data from "../public/medium_post_response.json";
+import Layout from "../src/components/Layout";
 
-const Home: NextPage = () => {
-  const [showLoader, setShowLoader] = useState(true);
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  if (process.env.NODE_ENV === "production") {
+    const res = await fetch(
+      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sabin-baniya"
+    );
+    const data = await res.json();
+    return {
+      props: {
+        blogPosts: data.items as BlogPosts[],
+      },
+    };
+  } else {
+    return {
+      props: {
+        blogPosts: medium_post_sample_data.items,
+      },
+    };
+  }
+};
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowLoader(false);
-    }, delayForLoading * 1000);
-  }, []);
-
+const Home: NextPage<{ blogPosts: BlogPosts[] }> = ({ blogPosts }) => {
   return (
     <>
       <Head>
         <title>Sabin Baniya | Personal Portfolio Website</title>
       </Head>
-      <>
-        <AnimatePresence>{showLoader && <Loader />}</AnimatePresence>
-        <Navbar />
-        <section className='px-12 pt-[12vh]'>
+      <Layout blogPosts={blogPosts}>
+        <section className="px-12 pt-[12vh]">
           <HeroSection />
           <AboutSection />
           <WorkSection />
           <ContactSection />
         </section>
-        <Footer />
-      </>
+      </Layout>
     </>
   );
 };

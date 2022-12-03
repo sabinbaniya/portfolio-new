@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "945ceabe-3df0-452d-a559-be520d39181d",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://api.medium.com/v1/me",
+    "url": "https://api.medium.com/v1/me",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-12-02T12:52:42.033Z",
+    "modified": "2022-12-02T12:58:13.574Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer 2c0054a4d9747414810f5c7791e3232c31d210e1b4bd571abb52a7b11d1c8066c"
+      }
+    ],
+    "params": [],
+    "tests": []
+  }
+]

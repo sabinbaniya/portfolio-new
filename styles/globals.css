@@ -103,3 +103,15 @@ select:-webkit-autofill:focus {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-800 cursor-pointer;
 }
+
+#blog-post-body img {
+  @apply rounded-xl overflow-hidden;
+}
+
+#blog-post-body p {
+  @apply my-4;
+}
+
+#blog-post-body pre {
+  @apply bg-gray-700 px-8 py-4 rounded-lg;
+}

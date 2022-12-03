@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "dc06d9fa-4d7d-4e70-9898-b86c3dc588b0",
+    "colId": "a03166d8-2268-409d-a8d6-dc7e4a3b4270",
+    "containerId": "",
+    "name": "Get access token first time",
+    "url": "https://api.medium.com/v1/users/1b84618d5c215aeedced33d01e4c04a6b4cdc411de1a9739043ccdc485dda0466/publications",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-12-02T12:54:01.159Z",
+    "modified": "2022-12-02T13:00:01.155Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer 2c0054a4d9747414810f5c7791e3232c31d210e1b4bd571abb52a7b11d1c8066c"
+      }
+    ],
+    "params": [],
+    "tests": []
+  }
+]

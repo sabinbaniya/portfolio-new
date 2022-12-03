@@ -35,10 +35,7 @@ const HeroSection = () => {
           </h1>
         </div>
         <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex items-center space-x-4">
-          {/* . */}
-          <span className="whitespace-nowrap">
-            Full-Stack Web Developer
-          </span>{" "}
+          <span className="whitespace-nowrap">Full-Stack Web Developer</span>{" "}
           <Dot size={5} />
           <span className="whitespace-nowrap">UI/UX Designer</span>
           <Dot size={5} />
@@ -53,6 +50,7 @@ const HeroSection = () => {
           alt=""
           height={1484.47}
           width={982.58}
+          priority
         />
         <motion.div
           drag

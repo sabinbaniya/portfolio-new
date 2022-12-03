@@ -1,6 +1,9 @@
 import AnimatedContactIcons from "./AnimatedContactIcons";
 import BlogLink from "./BlogLink";
 import NewsletterForm from "./NewsletterForm";
+import { GetStaticProps } from "next";
+import { BlogPosts } from "../types";
+import Link from "next/link";
 
 const svgIconDValues = {
   twitter:
@@ -11,7 +14,8 @@ const svgIconDValues = {
     "M37.3988 35.2287L60.6371 17.2596C62.1458 16.0929 61.3209 13.6774 59.4137 13.6774H11.8561C9.92686 13.6774 9.11597 16.1394 10.6676 17.2859L34.9869 35.2551C35.7063 35.7867 36.6912 35.7759 37.3988 35.2287ZM60.0254 16.4685L36.7871 34.4377C36.4333 34.7112 35.9409 34.7166 35.5811 34.4508L11.2619 16.4817C10.4861 15.9084 10.8915 14.6774 11.8561 14.6774H59.4137C60.3673 14.6774 60.7798 15.8852 60.0254 16.4685ZM11.4485 26.9935C11.4485 26.7173 11.2247 26.4935 10.9485 26.4935C10.6724 26.4935 10.4485 26.7173 10.4485 26.9935V44.0641C10.4485 45.9971 12.0156 47.5641 13.9485 47.5641H57.6689C59.6019 47.5641 61.1689 45.9971 61.1689 44.0641V27.1455C61.1689 26.8694 60.9451 26.6455 60.6689 26.6455C60.3928 26.6455 60.1689 26.8694 60.1689 27.1455V44.0641C60.1689 45.4448 59.0496 46.5641 57.6689 46.5641H13.9485C12.5678 46.5641 11.4485 45.4448 11.4485 44.0641V26.9935Z",
 };
 
-const Footer = () => {
+const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
+  console.log(blogPosts);
   return (
     <footer className="relative min-h-[65vh] overflow-hidden">
       <div className="w-64 h-64 bg-primary-blue/50 absolute -top-20 -left-20 rounded-full "></div>
@@ -21,24 +25,16 @@ const Footer = () => {
           <div className="pl-8 basis-[35%]">
             <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
             <div className="space-y-4 mt-6">
-              <BlogLink
-                image_url="/gaintplay.png"
-                title="Blog title 1"
-                description="Description about the above blog, a very looooooooong blog's short description"
-                date="2022/09/12"
-              />
-              <BlogLink
-                image_url="/gaintplay.png"
-                title="Blog title 1"
-                description="Description about the above blog, a very looooooooong blog's short description"
-                date="2022/09/12"
-              />
-              <BlogLink
-                image_url="/gaintplay.png"
-                title="Blog title 1"
-                description="Description about the above blog, a very looooooooong blog's short description"
-                date="2022/09/12"
-              />
+              {blogPosts.map((el) => (
+                <BlogLink
+                  key={el.link}
+                  image_url={el.thumbnail}
+                  title={el.title}
+                  description={el.description}
+                  date={el.pubDate}
+                  link={/(?<=m\/)(.*)(?=\?)/.exec(el.link)}
+                />
+              ))}
             </div>
           </div>
           <div className="">
@@ -54,7 +50,7 @@ const Footer = () => {
                 <a href="#work">Work</a>
               </li>
               <li>
-                <a href="#blog">Blog</a>
+                <Link href="/blogs">Blog</Link>
               </li>
               <li>
                 <a href="#contact">Contact</a>
