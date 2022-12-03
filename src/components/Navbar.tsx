@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import GradientButton from "./GradientButton";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -28,12 +29,12 @@ const Navbar = () => {
           >
             My Works
           </a>
-          <a
-            href="#blog"
+          <Link
+            href="/blogs"
             className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
           >
             Blog
-          </a>
+          </Link>
         </div>
         <div className="font-semibold">
           <a href="#contact">

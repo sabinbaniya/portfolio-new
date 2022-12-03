@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Montserrat } from "@next/font/google";
 import "@splidejs/react-splide/css";
+import { useEffect } from "react";
+import { parse } from "rss-to-json";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -25,6 +27,15 @@ const montserrat = Montserrat({
 });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await fetch(
+  //       "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sabin-baniya"
+  //     );
+  //     // const data = JSON.stringify(res);
+  //     console.log(await res.json());
+  //   })();
+  // }, []);
   return (
     <>
       <main className={`${montserrat.variable} font-sans relative`}>
