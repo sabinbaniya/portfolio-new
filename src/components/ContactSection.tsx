@@ -65,15 +65,21 @@ const ContactSection = () => {
       >
         Let&apos;s Talk
       </motion.p>
-      <section className="flex mb-20">
-        <div className="basis-1/2">
-          <Image
-            src="/hero2.png"
-            height={438}
-            width={300}
-            className="max-h-[50vh] w-auto"
-            alt=""
-          />
+      <section className="flex mb-20 items-center">
+        <div className="basis-1/2 grid place-items-center">
+          <div className="relative flex">
+            <Image
+              src="/hero2.png"
+              height={438}
+              width={300}
+              className="max-h-[50vh] w-auto"
+              alt=""
+            />
+            <div className="bg-[#162334] h-20 w-60 rounded-xl relative -mt-10">
+              <div className="p-4">Let&apos;s talk about your new idea 💡</div>
+              <div className="border-x-[20px] border-t-[20px] border-x-transparent border-t-[#162334] h-0 w-0 absolute -bottom-4 left-4"></div>
+            </div>
+          </div>
         </div>
         <div className="basis-1/2">
           <form

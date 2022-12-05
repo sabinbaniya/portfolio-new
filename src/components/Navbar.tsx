@@ -2,11 +2,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import GradientButton from "./GradientButton";
 import Link from "next/link";
+import { Dispatch, SetStateAction, useState } from "react";
 
-const Navbar = () => {
+interface Props {
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean;
+}
+
+const Navbar = ({ setIsOpen, isOpen }: Props) => {
   return (
     <>
-      <nav className="backdrop-blur-md flex justify-between items-center px-12 border-b border-b-gray-600 min-h-[12vh] max-h-[12vh] fixed top-0 left-0 right-0 z-50 bg-background/50">
+      <nav className="backdrop-blur-md flex justify-between items-center px-6 border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/50">
         <div className="my-4">
           <Image
             src="/logo.png"
@@ -16,7 +22,13 @@ const Navbar = () => {
             className="w-8"
           />
         </div>
-        <div className="flex justify-between items-center space-x-2 font-semibold">
+        <div className="hidden sm:flex justify-between items-center space-x-2 font-semibold">
+          <a
+            href="#home"
+            className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
+          >
+            Home
+          </a>
           <a
             href="#about"
             className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
@@ -29,14 +41,14 @@ const Navbar = () => {
           >
             My Works
           </a>
-          <Link
+          {/* <Link
             href="/blogs"
             className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
           >
             Blog
-          </Link>
+          </Link> */}
         </div>
-        <div className="font-semibold">
+        <div className="hidden sm:block font-semibold">
           <a href="#contact">
             <GradientButton text="Contact Me" />
           </a>

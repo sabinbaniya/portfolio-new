@@ -31,14 +31,14 @@ const WorkSection = () => {
               project_name="Blog"
             />
           </SplideSlide>
-          <SplideSlide>
+          {/* <SplideSlide>
             <ProjectSlide
               image="/gaintplay.png"
               brief="We built a whole new platform on the web from scratch, for existing gaintplay users on mobile."
               tags={["UI/UX", "Development"]}
               project_name="Gaintplay"
             />
-          </SplideSlide>
+          </SplideSlide> */}
         </ProjectSlider>
       </section>
     </section>

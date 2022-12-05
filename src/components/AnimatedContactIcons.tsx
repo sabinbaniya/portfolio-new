@@ -11,9 +11,10 @@ const iconAnimationVariants = {
 interface Props {
   text: string;
   pathD: string;
+  className?: string;
 }
 
-const AnimatedContactIcons = ({ text, pathD }: Props) => {
+const AnimatedContactIcons = ({ text, pathD, className }: Props) => {
   const iconAnimationControls = useAnimationControls();
   return (
     <motion.li
@@ -30,6 +31,7 @@ const AnimatedContactIcons = ({ text, pathD }: Props) => {
         viewBox="0 0 71 63"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className={className}
       >
         <motion.path
           initial={iconAnimationVariants.anim}

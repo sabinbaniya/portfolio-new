@@ -5,7 +5,7 @@ import { GetStaticProps } from "next";
 import { BlogPosts } from "../types";
 import Link from "next/link";
 
-const svgIconDValues = {
+export const svgIconDValues = {
   twitter:
     "M58.882 11.6345C58.124 14.0685 56.515 16.1095 54.417 17.3935C56.469 17.1465 58.428 16.5845 60.248 15.7595C58.892 17.8475 57.17 19.6775 55.185 21.1475C55.201 21.5905 55.211 22.0445 55.211 22.4975C55.211 36.2595 44.997 52.1235 26.317 52.1235C20.584 52.1235 15.248 50.3965 10.752 47.4475C11.546 47.5405 12.355 47.5915 13.175 47.5915C17.929 47.5915 22.311 45.9265 25.786 43.1315C21.342 43.0495 17.594 40.0385 16.3 35.9035C16.918 36.0265 17.558 36.0885 18.212 36.0885C19.14 36.0885 20.038 35.9655 20.888 35.7225C16.238 34.7685 12.737 30.5565 12.737 25.5085V25.3855C14.108 26.1585 15.681 26.6325 17.341 26.6795C14.614 24.8125 12.825 21.6265 12.825 18.0175C12.825 16.1095 13.325 14.3155 14.196 12.7735C19.207 19.0795 26.689 23.2245 35.129 23.6575C34.954 22.8945 34.866 22.1005 34.866 21.2865C34.866 15.5375 39.413 10.8765 45.018 10.8765C47.941 10.8765 50.581 12.1345 52.432 14.1605C54.747 13.6965 56.918 12.8305 58.882 11.6345Z",
   github:
@@ -20,7 +20,7 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
     <footer className="relative min-h-[65vh] overflow-hidden">
       <div className="w-64 h-64 bg-primary-blue/50 absolute -top-20 -left-20 rounded-full "></div>
       <div className="w-64 h-64 bg-primary-light-blue/50 absolute -bottom-20 -right-20 rounded-full "></div>
-      <section className="border-t border-t-gray-600 px-12 backdrop-blur-[70px] absolute inset-0 pt-20">
+      <section className="border-t border-t-gray-600 px-12 backdrop-blur-[70px] absolute inset-0 pt-20 flex flex-col justify-between items-center">
         <section className="flex justify-between items-start">
           <div className="pl-8 basis-[35%]">
             <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
@@ -32,7 +32,8 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
                   title={el.title}
                   description={el.description}
                   date={el.pubDate}
-                  link={/(?<=m\/)(.*)(?=\?)/.exec(el.link)}
+                  // link={/(?<=m\/)(.*)(?=\?)/.exec(el.link)}
+                  link={[el.link]}
                 />
               ))}
             </div>
@@ -49,9 +50,9 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
               <li>
                 <a href="#work">Work</a>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/blogs">Blog</Link>
-              </li>
+              </li> */}
               <li>
                 <a href="#contact">Contact</a>
               </li>
@@ -83,7 +84,7 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
             </div>
           </div>
         </section>
-        <div className="font-light pt-10 pb-20 text-center">
+        <div className="font-light py-10 text-center">
           <span>Copyright &copy; Sabin Baniya {new Date().getFullYear()}</span>
         </div>
       </section>

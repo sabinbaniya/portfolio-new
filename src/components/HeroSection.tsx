@@ -24,7 +24,7 @@ const greetings = ["Welcome", "Namaste"];
 const HeroSection = () => {
   return (
     <section
-      className="flex justify-between items-center min-h-[88vh] scroll-mt-20"
+      className="flex justify-between items-center my-28 scroll-mt-20"
       id="home"
     >
       <div className="space-y-8">
@@ -43,7 +43,7 @@ const HeroSection = () => {
         </p>
         <PrimaryButton text="Know More" linkProp="#about" />
       </div>
-      <div className="relative select-none mt-20">
+      <div className="relative select-none mt-20 mr-20">
         <Image
           src="/hero.png"
           className="max-w-[500px] pointer-events-none select-none"
