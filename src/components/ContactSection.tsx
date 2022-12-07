@@ -58,7 +58,10 @@ const ContactSection = () => {
     }
   };
   return (
-    <section className="scroll-mt-20 px-4" id="contact">
+    <section
+      className="scroll-mt-20 px-4 xs:max-w-[425px] mx-auto "
+      id="contact"
+    >
       <SlidingHeading
         dataText="Let's Talk Let's Talk Let's Talk Let's Talk
         Let's TalkLet's TalkLet's TalkLet's TalkLet's

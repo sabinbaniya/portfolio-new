@@ -57,7 +57,10 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="scroll-mt-20 px-4" id="about">
+    <section
+      className="scroll-mt-20 px-4 xs:max-w-[425px] xs:mx-auto"
+      id="about"
+    >
       <motion.p
         style={{
           translateX: -translateVal,
@@ -73,11 +76,11 @@ const AboutSection = () => {
             src="/hero5.png"
             height={438}
             width={300}
-            className="max-h-[30vh] -mt-20 sm:max-h-[50vh] w-auto"
+            className="max-h-[30vh] -mt-20 sm:max-h-[50vh] xs:max-h-[40vh] w-auto"
             alt=""
           />
         </div>
-        <div className="sm:max-w-[553px] text-justify space-y-6 text-sm sm:mr-40 mt-4 sm:mt-10 tracking-wide leading-loose sm:font-medium">
+        <div className="sm:max-w-[553px] text-justify space-y-6 text-sm xs:text-base xs:leading-loose sm:mr-40 mt-4 sm:mt-10 tracking-wide leading-loose sm:font-medium">
           <p>
             Hey there 👋, I&apos;m Sabin Baniya, a full-stack web developer and
             designer based in Pokhara, Nepal. I help people create their online

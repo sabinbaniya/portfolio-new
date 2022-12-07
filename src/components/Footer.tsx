@@ -15,13 +15,13 @@ export const svgIconDValues = {
 };
 
 const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
-  console.log(blogPosts);
+  // console.log(blogPosts);
   return (
     <footer className="relative min-h-screen sm:min-h-[65vh] overflow-hidden">
       <div className="w-64 h-64 bg-primary-blue/50 absolute -top-20 -left-20 rounded-full "></div>
       <div className="w-64 h-64 bg-primary-light-blue/50 absolute -bottom-20 -right-20 rounded-full "></div>
       <section className="px-4 border-t border-t-gray-600 sm:px-12 backdrop-blur-[70px] inset-0 pt-10 sm:pt-20 flex flex-col justify-between items-center">
-        <section className="flex flex-col justify-between items-start space-y-8">
+        <section className="xs:px-4 xs:max-w-[425px] mx-auto flex flex-col justify-between items-start space-y-8">
           <div className="sm:pl-8 basis-[35%]">
             <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
             <div className="space-y-4 mt-6">

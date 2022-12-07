@@ -13,6 +13,7 @@ const Navbar = ({ setIsOpen, isOpen }: Props) => {
   return (
     <>
       <nav className="backdrop-blur-md flex justify-between items-center px-4 border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/50">
+        {/* <div className="xs:max-w-[425px] mx-auto"> */}
         <div className="my-4">
           <Image
             src="/logo.png"
@@ -53,6 +54,7 @@ const Navbar = ({ setIsOpen, isOpen }: Props) => {
             <GradientButton text="Contact Me" />
           </a>
         </div>
+        {/* </div> */}
       </nav>
     </>
   );

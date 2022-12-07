@@ -24,11 +24,11 @@ const greetings = ["Welcome", "Namaste"];
 const HeroSection = () => {
   return (
     <section
-      className="px-4 flex-col space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20"
+      className="px-4 flex-col space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20 xs:max-w-[425px] mx-auto"
       id="home"
     >
       <div className="space-y-8">
-        <div className="text-3xl sm:text-6xl font-black space-y-3 sm:space-y-4">
+        <div className="text-3xl xs:text-4xl sm:text-6xl font-black space-y-3 sm:space-y-4">
           <h1>Hey there</h1>
           <h1 className="leading-normal text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-primary-light-blue to-primary-light-blue">
             {greetings[0]} I&apos;m Sabin
@@ -44,13 +44,13 @@ const HeroSection = () => {
         <PrimaryButton
           text="Know More"
           linkProp="#about"
-          extraClasses="w-full"
+          extraClasses="w-full xs:max-w-[425px]"
         />
       </div>
       <div className="relative max-w-min mx-auto select-none sm:mt-20 sm:mr-20 grid place-items-center w-full">
         <Image
           src="/hero.png"
-          className="max-w-[200px] pointer-events-none select-none"
+          className="max-w-[200px] xs:max-w-[300px] pointer-events-none select-none"
           alt=""
           height={1484.47}
           width={982.58}
@@ -75,7 +75,7 @@ const HeroSection = () => {
           <ThreeDHover extraStyles="shadow-teal-500/70">
             <Image
               src="/react.png"
-              className="pointer-events-none max-w-[40px]"
+              className="pointer-events-none max-w-[40px] xs:max-w-[50px]"
               alt=""
               height={313}
               width={313}
@@ -102,7 +102,7 @@ const HeroSection = () => {
           <ThreeDHover extraStyles="shadow-gray-500/70">
             <Image
               src="/next.png"
-              className="pointer-events-none max-w-[40px]"
+              className="pointer-events-none max-w-[40px] xs:max-w-[50px]"
               alt=""
               height={313}
               width={313}
@@ -129,7 +129,7 @@ const HeroSection = () => {
           <ThreeDHover extraStyles="shadow-lime-500/70">
             <Image
               src="/node.png"
-              className="pointer-events-none max-w-[40px]"
+              className="pointer-events-none max-w-[40px] xs:max-w-[50px]"
               alt=""
               height={313}
               width={313}
@@ -156,7 +156,7 @@ const HeroSection = () => {
           <ThreeDHover extraStyles="shadow-blue-500/70">
             <Image
               src="/tailwind.png"
-              className="pointer-events-none max-w-[40px]"
+              className="pointer-events-none max-w-[40px] xs:max-w-[50px]"
               alt=""
               height={313}
               width={313}
@@ -183,7 +183,7 @@ const HeroSection = () => {
           <ThreeDHover extraStyles="shadow-blue-500/70">
             <Image
               src="/vscode.png"
-              className="pointer-events-none max-w-[40px]"
+              className="pointer-events-none max-w-[40px] xs:max-w-[50px]"
               alt=""
               height={313}
               width={313}

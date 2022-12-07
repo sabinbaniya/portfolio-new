@@ -5,7 +5,7 @@ import SlidingHeading from "./SlidingHeading";
 
 const WorkSection = () => {
   return (
-    <section className="scroll-mt-20 my-14 sm:my-20" id="work">
+    <section className="scroll-mt-20 my-14 xs:my-20 sm:my-20" id="work">
       <SlidingHeading dataText="My Works My Works My Works My Works My Works My Works">
         My Works My Works My Works My Works My Works My Works
       </SlidingHeading>
