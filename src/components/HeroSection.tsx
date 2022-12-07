@@ -24,7 +24,7 @@ const greetings = ["Welcome", "Namaste"];
 const HeroSection = () => {
   return (
     <section
-      className="flex-col space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20"
+      className="px-4 flex-col space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20"
       id="home"
     >
       <div className="space-y-8">
@@ -39,7 +39,7 @@ const HeroSection = () => {
           <Dot className="hidden" size={5} />
           <span className="whitespace-nowrap">UI/UX Designer</span>
           <Dot className="hidden" size={5} />
-          <span className="whitespace-nowrap">And Sometimes a Blog Writer</span>
+          <span className="whitespace-nowrap">I also write about tech</span>
         </p>
         <PrimaryButton
           text="Know More"

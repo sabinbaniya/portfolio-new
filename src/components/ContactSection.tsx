@@ -7,6 +7,7 @@ import { ScaleLoader } from "react-spinners";
 import FormSubmittedAnimation from "./FormSubmittedAnimation";
 import FormFailureAnimation from "./FormFailureAnimation";
 import Image from "next/image";
+import SlidingHeading from "./SlidingHeading";
 
 interface FormInputs {
   name: string;
@@ -57,16 +58,18 @@ const ContactSection = () => {
     }
   };
   return (
-    <section className="scroll-mt-20" id="contact">
-      <motion.p
-        // style={{ translateX: -translateVal + 100 }}
-        data-text="Let's Talk"
-        className="secondary_heading_style"
+    <section className="scroll-mt-20 px-4" id="contact">
+      <SlidingHeading
+        dataText="Let's Talk Let's Talk Let's Talk Let's Talk
+        Let's TalkLet's TalkLet's TalkLet's TalkLet's
+        Talk"
       >
-        Let&apos;s Talk
-      </motion.p>
-      <section className="flex mb-20 items-center">
-        <div className="basis-1/2 grid place-items-center">
+        Let&apos;s Talk Let&apos;s Talk Let&apos;s Talk Let&apos;s Talk
+        Let&apos;s TalkLet&apos;s TalkLet&apos;s TalkLet&apos;s TalkLet&apos;s
+        Talk
+      </SlidingHeading>
+      <section className="flex flex-col sm:flex-row mb-20 items-center">
+        <div className="hidden basis-1/2 sm:grid place-items-center">
           <div className="relative flex">
             <Image
               src="/hero2.png"
@@ -81,7 +84,7 @@ const ContactSection = () => {
             </div>
           </div>
         </div>
-        <div className="basis-1/2">
+        <div className="basis-1/2 w-full">
           <form
             onSubmit={handleSubmit(onsubmit)}
             className="space-y-6 max-w-lg"
@@ -89,7 +92,7 @@ const ContactSection = () => {
             <div className="flex flex-col justify-start space-y-2">
               <label
                 htmlFor="name"
-                className={`text-lg font-semibold ${
+                className={`text-base sm:text-lg font-semibold ${
                   errors.name ? "text-red-600 form-error" : ""
                 }`}
               >
@@ -98,7 +101,7 @@ const ContactSection = () => {
               <input
                 id="name"
                 {...register("name", { required: "Please fill in your name" })}
-                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-0 active:outline-0  autofill:bg-background transition-all  placeholder:font-semibold ${
+                className={`bg-background text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0  autofill:bg-background transition-all  placeholder:font-semibold ${
                   errors.name
                     ? "border-red-600 placeholder:text-red-800 form-error"
                     : "focus:border-[#3d3d3d]"
@@ -109,7 +112,7 @@ const ContactSection = () => {
             <div className="flex flex-col justify-start space-y-2">
               <label
                 htmlFor="email"
-                className={`text-lg font-semibold ${
+                className={`text-base sm:text-lg font-semibold ${
                   errors.email ? "text-red-600 form-error" : ""
                 }`}
               >
@@ -126,7 +129,7 @@ const ContactSection = () => {
                   },
                 })}
                 placeholder="Your Email"
-                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] h-16 w-full focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
+                className={`bg-background text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.email
                     ? "border-red-600 placeholder:text-red-800 text-red-600 form-error"
                     : "focus:border-[#3d3d3d]"
@@ -136,7 +139,7 @@ const ContactSection = () => {
             <div className="flex flex-col justify-start space-y-2">
               <label
                 htmlFor="message"
-                className={`text-lg font-semibold ${
+                className={`text-base sm:text-lg font-semibold ${
                   errors.message ? "text-red-600 form-error" : ""
                 }`}
               >
@@ -147,8 +150,7 @@ const ContactSection = () => {
                 {...register("message", {
                   required: "Please fill in your messaage",
                 })}
-                rows={7}
-                className={`bg-background border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
+                className={`bg-background h-32 text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.message
                     ? "border-red-600 placeholder:text-red-800 form-error"
                     : "focus:border-[#3d3d3d]"

@@ -17,12 +17,12 @@ export const svgIconDValues = {
 const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
   console.log(blogPosts);
   return (
-    <footer className="relative min-h-[65vh] overflow-hidden">
+    <footer className="relative min-h-screen sm:min-h-[65vh] overflow-hidden">
       <div className="w-64 h-64 bg-primary-blue/50 absolute -top-20 -left-20 rounded-full "></div>
       <div className="w-64 h-64 bg-primary-light-blue/50 absolute -bottom-20 -right-20 rounded-full "></div>
-      <section className="border-t border-t-gray-600 px-12 backdrop-blur-[70px] absolute inset-0 pt-20 flex flex-col justify-between items-center">
-        <section className="flex justify-between items-start">
-          <div className="pl-8 basis-[35%]">
+      <section className="px-4 border-t border-t-gray-600 sm:px-12 backdrop-blur-[70px] inset-0 pt-10 sm:pt-20 flex flex-col justify-between items-center">
+        <section className="flex flex-col justify-between items-start space-y-8">
+          <div className="sm:pl-8 basis-[35%]">
             <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
             <div className="space-y-4 mt-6">
               {blogPosts.map((el) => (
@@ -38,42 +38,47 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
               ))}
             </div>
           </div>
-          <div className="">
-            <p className="cursor-default text-xl font-semibold mb-2">Sitemap</p>
-            <ul className="font-medium space-y-3 mt-6">
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#work">Work</a>
-              </li>
-              {/* <li>
+          <div className="flex justify-between w-full">
+            <div className="">
+              <p className="cursor-default text-xl font-semibold mb-2">
+                Sitemap
+              </p>
+              <ul className="font-medium space-y-3 mt-6">
+                <li>
+                  <a href="#home">Home</a>
+                </li>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#work">Work</a>
+                </li>
+                {/* <li>
                 <Link href="/blogs">Blog</Link>
               </li> */}
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div className="">
+              <p className="cursor-default text-xl font-semibold mb-2">
+                Connect via
+              </p>
+              <ul className="space-y-3 mt-6 font-medium max-w-[120px]">
+                <AnimatedContactIcons
+                  text="Twitter"
+                  pathD={svgIconDValues.twitter}
+                />
+                <AnimatedContactIcons
+                  text="Github"
+                  pathD={svgIconDValues.github}
+                />
+                {/* <AnimatedContactIcons text="Email" pathD={svgIconDValues.email} /> */}
+              </ul>
+            </div>
           </div>
-          <div className="">
-            <p className="cursor-default text-xl font-semibold mb-2">
-              Connect via
-            </p>
-            <ul className="space-y-3 mt-6 font-medium max-w-[120px]">
-              <AnimatedContactIcons
-                text="Twitter"
-                pathD={svgIconDValues.twitter}
-              />
-              <AnimatedContactIcons
-                text="Github"
-                pathD={svgIconDValues.github}
-              />
-              {/* <AnimatedContactIcons text="Email" pathD={svgIconDValues.email} /> */}
-            </ul>
-          </div>
+
           <div className="">
             <p className="text-xl font-semibold">Sign Up for Newsletter</p>
             <p className="text-sm mt-6">

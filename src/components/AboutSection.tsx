@@ -57,7 +57,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="scroll-mt-20" id="about">
+    <section className="scroll-mt-20 px-4" id="about">
       <motion.p
         style={{
           translateX: -translateVal,

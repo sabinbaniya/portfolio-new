@@ -115,3 +115,10 @@ select:-webkit-autofill:focus {
 #blog-post-body pre {
   @apply bg-gray-700 px-8 py-4 rounded-lg;
 }
+
+.clip-text-3-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

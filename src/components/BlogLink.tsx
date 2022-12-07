@@ -29,7 +29,7 @@ const BlogLink = ({ image_url, title, description, date, link }: Props) => {
           }}
         ></div>
         <div className="col-span-2 px-4 py-3">
-          <span className="font-medium text-sm text-gray-300">
+          <span className="font-medium text-sm text-gray-300 clip-text-3-line">
             <ReactMarkdown>{title}</ReactMarkdown>
           </span>
         </div>

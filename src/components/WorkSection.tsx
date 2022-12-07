@@ -5,8 +5,10 @@ import SlidingHeading from "./SlidingHeading";
 
 const WorkSection = () => {
   return (
-    <section className="scroll-mt-20 my-20" id="work">
-      <SlidingHeading />
+    <section className="scroll-mt-20 my-14 sm:my-20" id="work">
+      <SlidingHeading dataText="My Works My Works My Works My Works My Works My Works">
+        My Works My Works My Works My Works My Works My Works
+      </SlidingHeading>
       <section className="">
         <ProjectSlider>
           <SplideSlide>

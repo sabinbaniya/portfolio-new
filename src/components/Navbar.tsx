@@ -12,7 +12,7 @@ interface Props {
 const Navbar = ({ setIsOpen, isOpen }: Props) => {
   return (
     <>
-      <nav className="backdrop-blur-md flex justify-between items-center px-6 border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/50">
+      <nav className="backdrop-blur-md flex justify-between items-center px-4 border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/50">
         <div className="my-4">
           <Image
             src="/logo.png"
