@@ -53,7 +53,7 @@ body {
 }
 
 .secondary_heading_style {
-  @apply text-[10rem] whitespace-nowrap font-black text-[#070c12] text-stroke-white;
+  @apply text-[5rem] sm:text-[10rem] whitespace-nowrap font-black text-[#070c12] text-stroke-white;
 }
 
 @keyframes formError {

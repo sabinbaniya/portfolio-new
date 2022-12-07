@@ -24,7 +24,7 @@ const greetings = ["Welcome", "Namaste"];
 const HeroSection = () => {
   return (
     <section
-      className="flex-col space-y-32 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20"
+      className="flex-col space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20"
       id="home"
     >
       <div className="space-y-8">

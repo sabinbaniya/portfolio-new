@@ -6,16 +6,17 @@ const ProjectSlider = ({ children }: { children: ReactNode }) => {
   return (
     <Splide
       options={{
-        rewind: true,
+        rewind: false,
         keyboard: "global",
         autoWidth: true,
         autoplay: true,
         arrows: false,
         type: "loop",
-        padding: "5rem",
-        gap: "2rem",
+        padding: "",
+        gap: "",
         pagination: false,
-      }}>
+      }}
+    >
       {children}
     </Splide>
   );

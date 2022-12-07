@@ -1,18 +1,12 @@
-import { motion } from "framer-motion";
 import ProjectSlide from "./ProjectSlide";
 import { SplideSlide } from "@splidejs/react-splide";
 import ProjectSlider from "./ProjectSlider";
+import SlidingHeading from "./SlidingHeading";
 
 const WorkSection = () => {
   return (
     <section className="scroll-mt-20 my-20" id="work">
-      <motion.p
-        // style={{ translateX: -translateVal + 100 }}
-        data-text="My Works"
-        className="secondary_heading_style"
-      >
-        My Works
-      </motion.p>
+      <SlidingHeading />
       <section className="">
         <ProjectSlider>
           <SplideSlide>
