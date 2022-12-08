@@ -27,8 +27,8 @@ const HeroSection = () => {
       className="px-4 flex-col sm:flex-row sm:space-y-0 space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20 xs:max-w-[425px] sm:max-w-none xs:mx-auto sm:space-x-0"
       id="home"
     >
-      <div className="space-y-8">
-        <div className="text-3xl xs:text-4xl sm:text-3xl md:text-[2.6rem] font-black space-y-3 sm:space-y-4">
+      <div className=" space-y-8">
+        <div className="text-3xl xs:text-4xl sm:text-3xl md:text-5xl font-black space-y-3 sm:space-y-4">
           <h1>Hey there</h1>
           <h1 className="leading-normal text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-primary-light-blue to-primary-light-blue">
             {greetings[0]} I&apos;m Sabin
@@ -47,10 +47,10 @@ const HeroSection = () => {
           extraClasses="w-full md:w-auto xs:max-w-[425px]"
         />
       </div>
-      <div className=" relative max-w-min mx-auto select-none sm:mt-20 lg:mr-20 grid place-items-center w-full">
+      <div className="relative max-w-min mx-auto select-none sm:mt-20 lg:mr-20 grid place-items-center w-full">
         <Image
           src="/hero.png"
-          className="max-w-[200px] xs:max-w-[300px] sm:max-w-[250px] pointer-events-none select-none"
+          className="max-w-[200px] xs:max-w-[300px] sm:max-w-[250px] md:max-w-[300px] pointer-events-none select-none"
           alt=""
           height={1484.47}
           width={982.58}

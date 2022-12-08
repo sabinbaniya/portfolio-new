@@ -40,7 +40,11 @@ const Layout = ({ children, blogPosts }: Props) => {
   return (
     <>
       <AnimatePresence>{showLoader && <Loader />}</AnimatePresence>
-      <div className={` relative h-[10vh] ${isOpen ? "overflow-hidden" : ""}`}>
+      <div
+        className={` relative h-[10vh] md:h-[12vh] ${
+          isOpen ? "overflow-hidden" : ""
+        }`}
+      >
         <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
         <AnimatePresence>
           {isOpen && (

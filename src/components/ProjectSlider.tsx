@@ -9,7 +9,7 @@ const ProjectSlider = ({ children }: { children: ReactNode }) => {
         rewind: false,
         keyboard: "global",
         autoWidth: true,
-        autoplay: false,
+        autoplay: true,
         arrows: false,
         type: "loop",
         padding: "",

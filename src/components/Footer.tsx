@@ -17,15 +17,15 @@ export const svgIconDValues = {
 const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
   // console.log(blogPosts);
   return (
-    <footer className="relative min-h-screen sm:min-h-[65vh] overflow-hidden">
+    <footer className="relative min-h-screen sm:min-h-[45vh] overflow-hidden">
       <div className="w-64 h-64 bg-primary-blue/50 absolute -top-20 -left-20 rounded-full "></div>
       <div className="w-64 h-64 bg-primary-light-blue/50 absolute -bottom-20 -right-20 rounded-full "></div>
-      <section className="px-4 border-t border-t-gray-600 md:px-12 backdrop-blur-[70px] inset-0 pt-10 sm:pt-14 md:pt-20 flex flex-col justify-between items-center">
+      <section className="px-4 border-t border-t-gray-600 md:px-4 backdrop-blur-[70px] inset-0 pt-10 sm:pt-14 md:pt-20 flex flex-col justify-between items-center">
         <section
           className="xs:px-4 xs:max-w-[425px] sm:px-0 mx-auto sm:mx-0 sm:w-full sm:max-w-none flex flex-col sm:flex-row 
          justify-between items-start space-y-8 sm:space-y-0 sm:space-x-8"
         >
-          <div className="order-1 md:pl-8 basis-[35%]">
+          <div className="order-1 md:pl-0 basis-[35%]">
             <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
             <div className="space-y-4 mt-6">
               {blogPosts.map((el) => (
@@ -41,8 +41,8 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
               ))}
             </div>
           </div>
-          <div className="order-3 flex justify-between w-full sm:w-auto sm:basis-[35%] sm:flex-col-reverse ">
-            <div className="sm:mt-8">
+          <div className="order-3 flex justify-between w-full sm:w-auto sm:basis-[35%] sm:flex-col-reverse md:flex-row md:space-x-8">
+            <div className="sm:mt-8 md:mt-0">
               <p className="cursor-default text-xl font-semibold mb-2">
                 Sitemap
               </p>
@@ -66,7 +66,7 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
             </div>
             <div className="">
               <p className="cursor-default text-xl font-semibold mb-2">
-                Connect via
+                Socials
               </p>
               <ul className="space-y-3 mt-6 font-medium max-w-[120px]">
                 <AnimatedContactIcons
@@ -81,7 +81,7 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
               </ul>
             </div>
           </div>
-          <div className="order-2">
+          <div className="order-2 md:order-4">
             <p className="text-xl font-semibold">Sign Up for Newsletter</p>
             <p className="text-sm mt-6">
               Your weekly dose of Javascript content. No spam, I promise
