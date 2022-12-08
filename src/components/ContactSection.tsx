@@ -59,7 +59,7 @@ const ContactSection = () => {
   };
   return (
     <section
-      className="scroll-mt-20 px-4 xs:max-w-[425px] mx-auto "
+      className="scroll-mt-20 px-4 xs:max-w-[425px] mx-auto sm:max-w-none"
       id="contact"
     >
       <SlidingHeading
@@ -71,18 +71,20 @@ const ContactSection = () => {
         Let&apos;s TalkLet&apos;s TalkLet&apos;s TalkLet&apos;s TalkLet&apos;s
         Talk
       </SlidingHeading>
-      <section className="flex flex-col sm:flex-row mb-20 items-center">
-        <div className="hidden basis-1/2 sm:grid place-items-center">
-          <div className="relative flex">
+      <section className="flex flex-col sm:justify-between sm:flex-row mb-20 items-center">
+        <div className="hidden basis-1/2 sm:block">
+          <div className="relative flex sm:justify-start sm:w-full sm:pt-10">
             <Image
               src="/hero2.png"
               height={438}
               width={300}
-              className="max-h-[50vh] w-auto"
+              className="max-h-[50vh] w-auto sm:max-h-[40vh]"
               alt=""
             />
-            <div className="bg-[#162334] h-20 w-60 rounded-xl relative -mt-10">
-              <div className="p-4">Let&apos;s talk about your new idea 💡</div>
+            <div className="bg-[#162334] rounded-xl relative -mt-10 sm:absolute sm:top-0 sm:right-10 ">
+              <div className="p-4 text-sm">
+                Let&apos;s talk about your new idea 💡
+              </div>
               <div className="border-x-[20px] border-t-[20px] border-x-transparent border-t-[#162334] h-0 w-0 absolute -bottom-4 left-4"></div>
             </div>
           </div>
@@ -104,7 +106,7 @@ const ContactSection = () => {
               <input
                 id="name"
                 {...register("name", { required: "Please fill in your name" })}
-                className={`bg-background text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0  autofill:bg-background transition-all  placeholder:font-semibold ${
+                className={`bg-background text-sm border-[4px] sm:border-[6px] sm:text-base rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0  autofill:bg-background transition-all  placeholder:font-semibold ${
                   errors.name
                     ? "border-red-600 placeholder:text-red-800 form-error"
                     : "focus:border-[#3d3d3d]"
@@ -132,7 +134,7 @@ const ContactSection = () => {
                   },
                 })}
                 placeholder="Your Email"
-                className={`bg-background text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
+                className={`bg-background text-sm border-[4px] sm:border-[6px] sm:text-base rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.email
                     ? "border-red-600 placeholder:text-red-800 text-red-600 form-error"
                     : "focus:border-[#3d3d3d]"

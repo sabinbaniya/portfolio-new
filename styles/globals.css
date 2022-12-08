@@ -53,7 +53,7 @@ body {
 }
 
 .secondary_heading_style {
-  @apply text-[5rem] sm:text-[10rem] whitespace-nowrap font-black text-[#070c12] text-stroke-white;
+  @apply text-[5rem] sm:text-[7rem] md:text-[10rem] whitespace-nowrap font-black text-[#070c12] text-stroke-white;
 }
 
 @keyframes formError {
@@ -86,22 +86,21 @@ select:-webkit-autofill:focus {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-gray-500;
+  @apply bg-gray-700;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-700 rounded-full;
+  @apply bg-gray-400 rounded-tl-lg rounded-bl-lg;
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-800 cursor-pointer;
+  @apply bg-gray-300 cursor-pointer;
 }
 
 #blog-post-body img {

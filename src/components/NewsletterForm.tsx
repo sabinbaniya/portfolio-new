@@ -37,7 +37,7 @@ const NewsletterForm = () => {
           }`}
           placeholder="john@gmail.com"
         />
-        <PrimaryButton text="Subscribe" extraClasses="sm:w-min w-full" />
+        <PrimaryButton text="Subscribe" extraClasses="md:w-min w-full" />
       </form>
     </>
   );

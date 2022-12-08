@@ -24,17 +24,17 @@ const greetings = ["Welcome", "Namaste"];
 const HeroSection = () => {
   return (
     <section
-      className="px-4 flex-col space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20 xs:max-w-[425px] mx-auto"
+      className="px-4 flex-col sm:flex-row sm:space-y-0 space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 scroll-mt-20 xs:max-w-[425px] sm:max-w-none xs:mx-auto sm:space-x-0"
       id="home"
     >
       <div className="space-y-8">
-        <div className="text-3xl xs:text-4xl sm:text-6xl font-black space-y-3 sm:space-y-4">
+        <div className="text-3xl xs:text-4xl sm:text-3xl font-black space-y-3 sm:space-y-4">
           <h1>Hey there</h1>
           <h1 className="leading-normal text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-primary-light-blue to-primary-light-blue">
             {greetings[0]} I&apos;m Sabin
           </h1>
         </div>
-        <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex flex-col sm:items-center sm:space-x-4 space-y-2">
+        <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex flex-col md:items-center md:space-x-4 space-y-2">
           <span className="whitespace-nowrap">Full-Stack Web Developer</span>{" "}
           <Dot className="hidden" size={5} />
           <span className="whitespace-nowrap">UI/UX Designer</span>
@@ -47,10 +47,10 @@ const HeroSection = () => {
           extraClasses="w-full xs:max-w-[425px]"
         />
       </div>
-      <div className="relative max-w-min mx-auto select-none sm:mt-20 sm:mr-20 grid place-items-center w-full">
+      <div className=" relative max-w-min mx-auto select-none sm:mt-20 lg:mr-20 grid place-items-center w-full">
         <Image
           src="/hero.png"
-          className="max-w-[200px] xs:max-w-[300px] pointer-events-none select-none"
+          className="max-w-[200px] xs:max-w-[300px] sm:max-w-[250px] pointer-events-none select-none"
           alt=""
           height={1484.47}
           width={982.58}

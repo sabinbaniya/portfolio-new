@@ -23,12 +23,12 @@ const BlogLink = ({ image_url, title, description, date, link }: Props) => {
     >
       <div className="grid grid-cols-3 bg-gray-900 rounded-lg overflow-hidden">
         <div
-          className="bg-center bg-cover"
+          className="bg-center bg-cover sm:col-span-3 h-20 md:col-span-1"
           style={{
             backgroundImage: `url(${image_url})`,
           }}
         ></div>
-        <div className="col-span-2 px-4 py-3">
+        <div className="col-span-2 px-4 py-3 sm:hidden md:block">
           <span className="font-medium text-sm text-gray-300 clip-text-3-line">
             <ReactMarkdown>{title}</ReactMarkdown>
           </span>

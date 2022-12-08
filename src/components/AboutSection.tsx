@@ -58,7 +58,7 @@ const AboutSection = () => {
 
   return (
     <section
-      className="scroll-mt-20 px-4 xs:max-w-[425px] xs:mx-auto"
+      className="scroll-mt-20 px-4 xs:max-w-[425px] xs:mx-auto sm:max-w-none "
       id="about"
     >
       <motion.p
@@ -70,17 +70,17 @@ const AboutSection = () => {
       >
         Something About <span ref={meElement}>Me</span>
       </motion.p>
-      <section className="flex flex-col-reverse justify-center sm:space-x-40 items-start">
-        <div className="pr-2 mt-4 ml-2 flex justify-end w-full">
+      <section className="flex flex-col-reverse sm:flex-row justify-center md:space-x-40 items-start sm:items-center sm:justify-between">
+        <div className="sm:basis-1/3 pr-2 mt-4 ml-2 flex justify-end sm:block sm:mt-0 sm:ml-0 sm:pr-0 w-full sm:h-full">
           <Image
             src="/hero5.png"
             height={438}
             width={300}
-            className="max-h-[30vh] -mt-20 sm:max-h-[50vh] xs:max-h-[40vh] w-auto"
+            className="max-h-[30vh] -mt-20 md:max-h-[50vh] xs:max-h-[40vh] w-auto object-"
             alt=""
           />
         </div>
-        <div className="sm:max-w-[553px] text-justify space-y-6 text-sm xs:text-base xs:leading-loose sm:mr-40 mt-4 sm:mt-10 tracking-wide leading-loose sm:font-medium">
+        <div className="sm:basis-1/2 sm:max-w-[553px] text-justify space-y-6 text-sm xs:text-base xs:leading-loose md:mr-40 mt-4 sm:mt-10 tracking-wide leading-loose sm:font-medium">
           <p>
             Hey there 👋, I&apos;m Sabin Baniya, a full-stack web developer and
             designer based in Pokhara, Nepal. I help people create their online

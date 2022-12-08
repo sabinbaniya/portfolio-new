@@ -6,7 +6,7 @@ interface Props {
 
 const ProjectTags = ({ text }: Props) => {
   return (
-    <span className="text-sm sm:text-base bg-primary-blue font-bold rounded-full py-1 px-4 m-1 inline-block">
+    <span className="text-sm md:text-base bg-primary-blue font-bold rounded-full py-1 px-4 m-1 inline-block">
       {text}
     </span>
   );

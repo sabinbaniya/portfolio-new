@@ -23,7 +23,7 @@ const Navbar = ({ setIsOpen, isOpen }: Props) => {
             className="w-8"
           />
         </div>
-        <div className="hidden sm:flex justify-between items-center space-x-2 font-semibold">
+        <div className="hidden sm:flex text-sm md:text-base justify-between items-center space-x-2 font-semibold">
           <a
             href="#home"
             className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"

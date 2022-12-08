@@ -35,7 +35,7 @@ const Home: NextPage<{ blogPosts: BlogPosts[] }> = ({ blogPosts }) => {
         <title>Sabin Baniya | Personal Portfolio Website</title>
       </Head>
       <Layout blogPosts={blogPosts}>
-        <section className=" sm:px-12 sm:pt-[12vh]">
+        <section className=" ">
           <HeroSection />
           <AboutSection />
           <WorkSection />
