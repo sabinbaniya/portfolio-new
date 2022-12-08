@@ -40,7 +40,7 @@ const Layout = ({ children, blogPosts }: Props) => {
   return (
     <>
       <AnimatePresence>{showLoader && <Loader />}</AnimatePresence>
-      <div className={` relative h-[12vh] ${isOpen ? "overflow-hidden" : ""}`}>
+      <div className={` relative h-[10vh] ${isOpen ? "overflow-hidden" : ""}`}>
         <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
         <AnimatePresence>
           {isOpen && (
@@ -165,28 +165,26 @@ const Layout = ({ children, blogPosts }: Props) => {
           )}
         </AnimatePresence>
 
-        <div className="sm:hidden fixed top-8 z-50 right-4">
+        <div className="sm:hidden fixed top-5 z-50 right-4">
           <button
             onClick={() => handleMenuClick()}
-            className={`relative h-7 w-9 grid place-items-center z-[60]`}
+            className={`relative h-6 w-8 grid place-items-center z-[60]`}
           >
             <div
-              className={`h-[3px] bg-white absolute transition-all  ${
-                isOpen
-                  ? "rotate-45 top-1 -left-0 w-[18px]"
-                  : "top-0 left-0 w-6 "
+              className={`h-[2px] bg-white absolute transition-all ${
+                isOpen ? "rotate-45 top-1 w-4 -left-0 " : "top-0 -left-1 w-5 "
               }`}
             ></div>
             <div
-              className={`w-10 h-[3px] bg-white absolute transition-all top-1/2 -translate-y-1/2 ${
-                isOpen ? "-rotate-45" : ""
+              className={`w-10 h-[2px] bg-white absolute transition-all top-1/2 -translate-y-1/2 ${
+                isOpen ? "-rotate-45 w-8" : ""
               }`}
             ></div>
             <div
-              className={`h-[3px] bg-white absolute transition-all  ${
+              className={`h-[2px] bg-white absolute transition-all  ${
                 isOpen
-                  ? "rotate-45 bottom-1 -right-0 w-[18px]"
-                  : "bottom-0 right-0 w-6 "
+                  ? "rotate-45 bottom-0.5 w-4 right-0.5 "
+                  : "bottom-0 -right-1 w-5 "
               }`}
             ></div>
           </button>

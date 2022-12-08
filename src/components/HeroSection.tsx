@@ -28,23 +28,23 @@ const HeroSection = () => {
       id="home"
     >
       <div className="space-y-8">
-        <div className="text-3xl xs:text-4xl sm:text-3xl font-black space-y-3 sm:space-y-4">
+        <div className="text-3xl xs:text-4xl sm:text-3xl md:text-[2.6rem] font-black space-y-3 sm:space-y-4">
           <h1>Hey there</h1>
           <h1 className="leading-normal text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-primary-light-blue to-primary-light-blue">
             {greetings[0]} I&apos;m Sabin
           </h1>
         </div>
-        <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex flex-col md:items-center md:space-x-4 space-y-2">
-          <span className="whitespace-nowrap">Full-Stack Web Developer</span>{" "}
-          <Dot className="hidden" size={5} />
-          <span className="whitespace-nowrap">UI/UX Designer</span>
-          <Dot className="hidden" size={5} />
-          <span className="whitespace-nowrap">I also write about tech</span>
+        <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex flex-col md:flex-row md:flex-wrap md:items-center md:gap-4 md:space-y-0 space-y-2">
+          <span className="whitespace-nowra">Full-Stack Web Developer</span>{" "}
+          <Dot className="hidden md:block" size={5} />
+          <span className="whitespace-nowra">UI/UX Designer</span>
+          <Dot className="hidden md:block" size={5} />
+          <span className="whitespace-nowra">I also write about tech</span>
         </p>
         <PrimaryButton
           text="Know More"
           linkProp="#about"
-          extraClasses="w-full xs:max-w-[425px]"
+          extraClasses="w-full md:w-auto xs:max-w-[425px]"
         />
       </div>
       <div className=" relative max-w-min mx-auto select-none sm:mt-20 lg:mr-20 grid place-items-center w-full">

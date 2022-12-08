@@ -12,7 +12,7 @@ interface Props {
 const Navbar = ({ setIsOpen, isOpen }: Props) => {
   return (
     <>
-      <nav className="backdrop-blur-md flex justify-between items-center px-4 border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/50">
+      <nav className="backdrop-blur-md flex justify-between items-center px-4 border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/20 h-[10vh]">
         {/* <div className="xs:max-w-[425px] mx-auto"> */}
         <div className="my-4">
           <Image
@@ -20,7 +20,7 @@ const Navbar = ({ setIsOpen, isOpen }: Props) => {
             alt=""
             width={100}
             height={100}
-            className="w-8"
+            className="w-6 "
           />
         </div>
         <div className="hidden sm:flex text-sm md:text-base justify-between items-center space-x-2 font-semibold">

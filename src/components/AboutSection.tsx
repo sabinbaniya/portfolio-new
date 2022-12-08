@@ -76,7 +76,7 @@ const AboutSection = () => {
             src="/hero5.png"
             height={438}
             width={300}
-            className="max-h-[30vh] -mt-20 md:max-h-[50vh] xs:max-h-[40vh] w-auto object-"
+            className="max-h-[30vh] -mt-20 sm:mt-0 md:max-h-[50vh] xs:max-h-[40vh] w-auto object-"
             alt=""
           />
         </div>

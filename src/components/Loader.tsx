@@ -26,7 +26,7 @@ const Loader = () => {
         height="58"
         viewBox="0 0 33 58"
         fill="none"
-        className="scale-[1.5] sm:scale-[2.5]"
+        className="scale-[1.5] sm:scale-[2] lg:scale-[2.5]"
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path

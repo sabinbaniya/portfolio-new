@@ -22,7 +22,7 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
       <div className="w-64 h-64 bg-primary-light-blue/50 absolute -bottom-20 -right-20 rounded-full "></div>
       <section className="px-4 border-t border-t-gray-600 md:px-12 backdrop-blur-[70px] inset-0 pt-10 sm:pt-14 md:pt-20 flex flex-col justify-between items-center">
         <section
-          className="xs:px-4 xs:max-w-[425px] sm:px-0 mx-auto sm:max-w-none flex flex-col sm:flex-row 
+          className="xs:px-4 xs:max-w-[425px] sm:px-0 mx-auto sm:mx-0 sm:w-full sm:max-w-none flex flex-col sm:flex-row 
          justify-between items-start space-y-8 sm:space-y-0 sm:space-x-8"
         >
           <div className="order-1 md:pl-8 basis-[35%]">

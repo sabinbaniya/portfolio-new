@@ -19,6 +19,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-montserrat)", ...fontFamily.sans],
       },
+      screens: {
+        md: "800px",
+      },
     },
     screens: {
       xs: "425px",
