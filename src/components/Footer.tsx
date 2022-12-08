@@ -23,7 +23,7 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
       <section className="px-4 border-t border-t-gray-600 md:px-4 backdrop-blur-[70px] inset-0 pt-10 sm:pt-14 md:pt-20 flex flex-col justify-between items-center">
         <section
           className="xs:px-4 xs:max-w-[425px] sm:px-0 mx-auto sm:mx-0 sm:w-full sm:max-w-none flex flex-col sm:flex-row 
-         justify-between items-start space-y-8 sm:space-y-0 sm:space-x-8"
+         justify-between items-start space-y-8 sm:space-y-0 sm:space-x-8 xl:max-w-screen-xl xl:mx-auto xl:px-4"
         >
           <div className="order-1 md:pl-0 basis-[35%]">
             <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
@@ -41,7 +41,7 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
               ))}
             </div>
           </div>
-          <div className="order-3 flex justify-between w-full sm:w-auto sm:basis-[35%] sm:flex-col-reverse md:flex-row md:space-x-8">
+          <div className="order-3 flex justify-between w-full sm:w-auto sm:basis-[35%] sm:flex-col-reverse md:flex-row md:space-x-8 md:justify-around">
             <div className="sm:mt-8 md:mt-0">
               <p className="cursor-default text-xl font-semibold mb-2">
                 Sitemap

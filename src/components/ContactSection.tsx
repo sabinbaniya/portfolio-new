@@ -59,7 +59,7 @@ const ContactSection = () => {
   };
   return (
     <section
-      className="scroll-mt-20 px-4 xs:max-w-[425px] mx-auto sm:max-w-none"
+      className="scroll-mt-20 px-4 xs:max-w-[425px] mx-auto sm:max-w-none xl:max-w-screen-xl xl:mx-auto"
       id="contact"
     >
       <SlidingHeading
@@ -73,7 +73,7 @@ const ContactSection = () => {
       </SlidingHeading>
       <section className="flex flex-col sm:justify-between sm:flex-row mb-20 items-center">
         <div className="hidden basis-1/2 sm:block">
-          <div className="relative flex sm:justify-start sm:w-full sm:pt-10">
+          <div className="relative flex sm:justify-start sm:w-full sm:pt-10 lg:justify-center">
             <Image
               src="/hero2.png"
               height={438}
@@ -155,7 +155,7 @@ const ContactSection = () => {
                 {...register("message", {
                   required: "Please fill in your messaage",
                 })}
-                className={`bg-background h-32 text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
+                className={`bg-background h-32 lg:h-40 text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
                   errors.message
                     ? "border-red-600 placeholder:text-red-800 form-error"
                     : "focus:border-[#3d3d3d]"

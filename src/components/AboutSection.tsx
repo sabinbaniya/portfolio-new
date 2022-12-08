@@ -2,6 +2,7 @@ import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import PrimaryButton from "./PrimaryButton";
+import SlidingHeading from "./SlidingHeading";
 
 const AboutSection = () => {
   const { scrollY } = useScroll();
@@ -58,10 +59,10 @@ const AboutSection = () => {
 
   return (
     <section
-      className="scroll-mt-20 px-4 xs:max-w-[425px] xs:mx-auto sm:max-w-none "
+      className="scroll-mt-20 px-4 xs:max-w-[425px] xs:mx-auto sm:max-w-none lg:max-w-screen-lg xl:mx-auto"
       id="about"
     >
-      <motion.p
+      {/* <motion.p
         style={{
           translateX: -translateVal,
         }}
@@ -69,9 +70,13 @@ const AboutSection = () => {
         className="secondary_heading_style"
       >
         Something About <span ref={meElement}>Me</span>
-      </motion.p>
-      <section className="flex flex-col-reverse sm:flex-row justify-center md:justify-between md:space-x- items-start sm:items-center sm:justify-between">
-        <div className="sm:basis-1/3 md:basis-1/2 pr-2 mt-4 ml-2 flex justify-end sm:justify-center sm:mt-0 sm:ml-0 sm:pr-0 w-full sm:h-full">
+      </motion.p> */}
+      <SlidingHeading dataText="About Me About Me About Me About Me About Me About Me About Me About Me About Me">
+        About Me About Me About Me About Me About Me About Me About Me About Me
+        About Me
+      </SlidingHeading>
+      <section className="flex flex-col-reverse sm:flex-row justify-center md:justify-between md:space-x- items-start sm:items-center sm:justify-between lg:mt-10">
+        <div className="sm:basis-1/3 md:basis-1/2 pr-2 mt-4 ml-2 flex justify-end sm:justify-center lg:justify- sm:mt-0 sm:ml-0 sm:pr-0 w-full sm:h-full">
           <Image
             src="/hero5.png"
             height={438}

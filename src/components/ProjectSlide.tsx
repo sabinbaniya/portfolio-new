@@ -10,7 +10,7 @@ interface Props {
 
 const ProjectSlide = ({ image, project_name, tags, brief }: Props) => {
   return (
-    <div className="px-6 sm:px-0 first:pl-4 last:pl-4 max-w-[100vw] sm:max-w-[50vw] md:max-w-[60vw]">
+    <div className="px-6 sm:px-0 first:pl-4 last:pl-4 max-w-[100vw] sm:max-w-[50vw] md:max-w-[60vw] lg:max-w-[640px]">
       <div
         className="flex flex-col md:items-stretch justify-between md:flex-row mx-auto bg-no-repeat bg-cover rounded-2xl min-h-[350px] max-h-[350px] overflow-hidden hover:cursor-grab active:cursor-grabbing"
         style={{
