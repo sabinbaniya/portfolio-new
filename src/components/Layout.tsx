@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
 import React, { ReactNode, useEffect, useState } from "react";
 import { delayForLoading } from "../constants";
 import { BlogPosts } from "../types";
@@ -12,23 +12,67 @@ interface Props {
   blogPosts: BlogPosts[];
 }
 
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.2, delayChildren: 0.4 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.1, staggerDirection: -1 },
+  },
+};
+
+const sidebar = {
+  open: {
+    height: "100vh",
+    width: "100vw",
+    transition: { duration: 0.5, type: "spring" },
+  },
+  closed: {
+    height: 0,
+    width: 0,
+    transition: { delay: 0.6, type: "spring", stiffness: 400, damping: 40 },
+  },
+};
+
+const sidebarOverlay = {
+  open: {
+    // opacity: 1,
+    scale: 450,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  closed: {
+    scale: 0,
+    // opacity: 0,
+    transition: { duration: 0.5, delay: 0.6 },
+  },
+};
+
+const MenuItemVariants = {
+  open: {
+    translateX: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      damping: 20,
+    },
+  },
+  closed: {
+    translateX: -1000,
+    opacity: 0,
+    transition: {
+      type: "spring",
+      damping: 20,
+    },
+  },
+};
 const Layout = ({ children, blogPosts }: Props) => {
   const [showLoader, setShowLoader] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
-  const [showMenuOptions, setShowMenuOption] = useState(false);
+  const [isOpen, toggleOpen] = useCycle(false, true);
 
   const handleMenuClick = () => {
-    // isOpen & showMenuOption state were used to create staggering children effect
-    // with framer motion
-    if (isOpen) {
-      setShowMenuOption(false);
-      setTimeout(() => {
-        setIsOpen(false);
-      }, 800);
-    } else {
-      setIsOpen(true);
-      setTimeout(() => setShowMenuOption(true), 800);
-    }
+    toggleOpen();
   };
 
   useEffect(() => {
@@ -45,134 +89,78 @@ const Layout = ({ children, blogPosts }: Props) => {
           isOpen ? "overflow-hidden" : ""
         }`}
       >
-        <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Navbar isOpen={isOpen} />
         <AnimatePresence>
+          {/* background for menu that grows and shrinks  */}
           {isOpen && (
             <>
               <motion.div
-                initial={{
-                  scale: 0,
-                }}
-                animate={{
-                  scale: 500,
-                }}
-                exit={{
-                  scale: 0,
-                }}
-                transition={{
-                  duration: 0.6,
-                }}
-                className="bg-[#0c0a0a] h-1 w-1 rounded-full grid place-items-center top-10 right-8  origin-center fixed z-50"
-              ></motion.div>
+                initial={"closed"}
+                animate={"open"}
+                exit={"closed"}
+                variants={sidebar}
+                className="rounded-full grid place-items-center top-0 right-0 origin-top-right fixed z-50 sm:hidden"
+              >
+                <motion.div
+                  variants={sidebarOverlay}
+                  className="bg-[#0d1520] absolute h-1 w-1 top-9 right-9 rounded-full"
+                ></motion.div>
+                <motion.div
+                  variants={variants}
+                  className="text-white z-40 relative left-0 flex flex-col space-y-8 text-6xl font-black"
+                >
+                  <motion.a
+                    variants={MenuItemVariants}
+                    onClick={() => handleMenuClick()}
+                    href="#home"
+                  >
+                    Home
+                  </motion.a>
+                  <motion.a
+                    variants={MenuItemVariants}
+                    onClick={() => handleMenuClick()}
+                    href="#about"
+                  >
+                    About
+                  </motion.a>
+                  <motion.a
+                    variants={MenuItemVariants}
+                    onClick={() => handleMenuClick()}
+                    href="#work"
+                  >
+                    Work
+                  </motion.a>
+                  <motion.a
+                    variants={MenuItemVariants}
+                    onClick={() => handleMenuClick()}
+                    href="#contact"
+                  >
+                    Contact
+                  </motion.a>
+                  <motion.div
+                    variants={MenuItemVariants}
+                    className="flex space-x-16 px-6 pt-8 "
+                  >
+                    <AnimatedContactIcons
+                      className="scale-[3]"
+                      text=""
+                      pathD={svgIconDValues.twitter}
+                    />
+                    <AnimatedContactIcons
+                      className="scale-[3]"
+                      text=""
+                      pathD={svgIconDValues.github}
+                    />
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </>
           )}
         </AnimatePresence>
-        <AnimatePresence>
-          {showMenuOptions && (
-            <div className="text-white z-[1000] fixed top-20 left-8 flex flex-col space-y-8 text-6xl font-black">
-              <motion.a
-                initial={{
-                  translateX: -500,
-                }}
-                animate={{
-                  translateX: 0,
-                }}
-                exit={{
-                  translateX: -2000,
-                }}
-                onClick={() => handleMenuClick()}
-                href="#home"
-              >
-                Home
-              </motion.a>
-              <motion.a
-                initial={{
-                  translateX: -500,
-                }}
-                animate={{
-                  translateX: 0,
-                }}
-                transition={{
-                  delay: 0.2,
-                }}
-                exit={{
-                  translateX: -2000,
-                }}
-                onClick={() => handleMenuClick()}
-                href="#about"
-              >
-                About
-              </motion.a>
-              <motion.a
-                initial={{
-                  translateX: -500,
-                }}
-                animate={{
-                  translateX: 0,
-                }}
-                transition={{
-                  delay: 0.4,
-                }}
-                exit={{
-                  translateX: -2000,
-                }}
-                onClick={() => handleMenuClick()}
-                href="#work"
-              >
-                Work
-              </motion.a>
-              <motion.a
-                initial={{
-                  translateX: -500,
-                }}
-                animate={{
-                  translateX: 0,
-                }}
-                transition={{
-                  delay: 0.6,
-                }}
-                exit={{
-                  translateX: -2000,
-                }}
-                onClick={() => handleMenuClick()}
-                href="#contact"
-              >
-                Contact
-              </motion.a>
-              <motion.div
-                initial={{
-                  translateX: -500,
-                }}
-                animate={{
-                  translateX: 0,
-                }}
-                transition={{
-                  delay: 0.8,
-                }}
-                exit={{
-                  translateX: -2000,
-                }}
-                className="flex space-x-16 px-6 pt-8 "
-              >
-                <AnimatedContactIcons
-                  className="scale-[3]"
-                  text=""
-                  pathD={svgIconDValues.twitter}
-                />
-                <AnimatedContactIcons
-                  className="scale-[3]"
-                  text=""
-                  pathD={svgIconDValues.github}
-                />
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
-
-        <div className="sm:hidden fixed top-5 z-50 right-4">
+        <div className="sm:hidden fixed top-6 z-50 right-5">
           <button
             onClick={() => handleMenuClick()}
-            className={`relative h-6 w-8 grid place-items-center z-[60]`}
+            className={`relative h-6 w-8 grid place-items-center z-[60] focus:outline-none`}
           >
             <div
               className={`h-[2px] bg-white absolute transition-all ${
@@ -181,7 +169,7 @@ const Layout = ({ children, blogPosts }: Props) => {
             ></div>
             <div
               className={`w-10 h-[2px] bg-white absolute transition-all top-1/2 -translate-y-1/2 ${
-                isOpen ? "-rotate-45 w-8" : ""
+                isOpen ? "-rotate-45 w-[35px]" : ""
               }`}
             ></div>
             <div

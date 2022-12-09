@@ -84,14 +84,15 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
           <div className="order-2 md:order-4">
             <p className="text-xl font-semibold">Sign Up for Newsletter</p>
             <p className="text-sm mt-6">
-              Your weekly dose of Javascript content. No spam, I promise
+              I&apos;m planning to create a newletter. For Javascript & Web
+              Development related content
             </p>
             <div className="mt-4 w-full">
               <NewsletterForm />
             </div>
           </div>
         </section>
-        <div className="font-light py-10 text-center">
+        <div className="font-medium py-10 text-center">
           <span>Copyright &copy; Sabin Baniya {new Date().getFullYear()}</span>
         </div>
       </section>

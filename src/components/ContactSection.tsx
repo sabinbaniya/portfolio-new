@@ -78,7 +78,7 @@ const ContactSection = () => {
               src="/hero2.png"
               height={438}
               width={300}
-              className="max-h-[50vh] w-auto sm:max-h-[40vh]"
+              className="max-h-[50vh] w-auto sm:max-h-[40vh] lg:max-h-[50vh]"
               alt=""
             />
             <div className="bg-[#162334] rounded-xl relative -mt-10 sm:absolute sm:top-0 sm:right-10 ">

@@ -88,18 +88,13 @@ const AboutSection = () => {
         <div className="sm:basis-1/2 sm:max-w-[553px] text-justify space-y-6 text-sm xs:text-base xs:leading-loose mt-4 sm:mt-10 md:mt-0 tracking-wide leading-loose sm:font-medium">
           <p>
             Hey there 👋, I&apos;m Sabin Baniya, a full-stack web developer and
-            designer based in Pokhara, Nepal. I help people create their online
-            presence through their website.{" "}
-            {/* . I love building performant &
-            elegant web applications that delight all users. */}
+            designer based in Pokhara, Nepal. I help people & businesses create
+            their online presence through their website and google.{" "}
             <span className="text-gray-400">
               Apart from work I like travelling & spending time with my friends.
             </span>
           </p>
-          <p>
-            I&apos;m currently pursing my bachelor&apos;s degree in Software
-            Engineering
-          </p>
+          <p></p>
           <PrimaryButton text="See My Work" linkProp="#work" />
         </div>
       </section>

@@ -22,7 +22,7 @@ const SlidingHeading = ({ dataText, children }: Props) => {
   return (
     <>
       <motion.p
-        style={{ translateX: -translateVal + 100 }}
+        style={{ translateX: -translateVal }}
         data-text={dataText}
         className="secondary_heading_style"
         ref={elRef}

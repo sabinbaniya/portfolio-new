@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 
 interface Props {
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  setIsOpen?: Dispatch<SetStateAction<boolean>>;
   isOpen: boolean;
 }
 
@@ -13,8 +13,8 @@ const Navbar = ({ setIsOpen, isOpen }: Props) => {
   return (
     <>
       <nav className="backdrop-blur-md  border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/20 h-[10vh] md:h-[12vh]">
-        <div className=" flex justify-between items-center xl:max-w-screen-xl xl:mx-auto px-4">
-          <div className="my-4">
+        <div className="h-full flex justify-between items-center xl:max-w-screen-xl xl:mx-auto px-4">
+          <div className="">
             <Image
               src="/logo.png"
               alt=""

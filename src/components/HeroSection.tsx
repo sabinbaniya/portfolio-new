@@ -24,7 +24,7 @@ const greetings = ["Welcome", "Namaste"];
 const HeroSection = () => {
   return (
     <section
-      className="px-4 flex-col sm:flex-row sm:space-y-0 space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 lg:my-40 scroll-mt-20 xs:max-w-[425px] sm:max-w-none xs:mx-auto sm:space-x-0 xl:max-w-screen-xl xl:mx-auto"
+      className="px-4 flex-col sm:flex-row sm:space-y-0 space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 lg:my-40 scroll-mt-80 xs:max-w-[425px] sm:max-w-none xs:mx-auto sm:space-x-0 xl:max-w-screen-xl xl:mx-auto"
       id="home"
     >
       <div className="space-y-8 lg:space-y-6">

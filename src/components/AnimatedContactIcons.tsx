@@ -18,7 +18,7 @@ const AnimatedContactIcons = ({ text, pathD, className }: Props) => {
   const iconAnimationControls = useAnimationControls();
   return (
     <motion.li
-      className="cursor-pointer flex items-center justify-between"
+      className="cursor-pointer flex items-center justify-between space-x-4"
       onHoverStart={() => {
         iconAnimationControls.set(iconAnimationVariants.init);
         iconAnimationControls.start(iconAnimationVariants.anim);
