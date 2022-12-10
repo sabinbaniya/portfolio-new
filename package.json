@@ -12,6 +12,7 @@
     "@next/font": "^13.0.4",
     "@splidejs/react-splide": "^0.7.12",
     "framer-motion": "^7.6.7",
+    "mongoose": "^6.8.0",
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
