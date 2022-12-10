@@ -15,7 +15,7 @@ interface FormInputs {
   message: string;
 }
 
-type SubmissionStates = "loading" | "submitted" | "error";
+export type SubmissionStates = "loading" | "submitted" | "error";
 
 const ContactSection = () => {
   const {

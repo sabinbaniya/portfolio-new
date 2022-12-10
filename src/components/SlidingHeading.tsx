@@ -13,7 +13,7 @@ const SlidingHeading = ({ dataText, children }: Props) => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      console.log(window.innerHeight, elRef.current?.getBoundingClientRect());
+      // console.log(window.innerHeight, elRef.current?.getBoundingClientRect());
       setTranslateVal(latest);
     });
     //eslint-disable-next-line

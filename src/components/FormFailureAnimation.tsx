@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { NodeNextRequest } from "next/dist/server/base-http/node";
-const Tick = () => {
+const Tick = ({ text }: { text?: string }) => {
   return (
     <div className="flex justify-center items-center space-x-2">
       <svg
@@ -27,7 +26,7 @@ const Tick = () => {
           d="M55.8477 57.5503L117.747 119.45"
           stroke="white"
           strokeWidth="15"
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
         <motion.path
           initial={{ pathLength: 0, visibility: "hidden" }}
@@ -36,7 +35,7 @@ const Tick = () => {
           d="M117.747 57.5503L55.8477 119.45"
           stroke="white"
           strokeWidth="15"
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
       </svg>
       <motion.p
@@ -52,7 +51,7 @@ const Tick = () => {
         }}
         transition={{ delay: 1.5, duration: 0.2 }}
       >
-        Couldn&apos;t Submit, Please try again.
+        {text || "Couldn&apos;t Submit, Please try again."}
       </motion.p>
     </div>
   );

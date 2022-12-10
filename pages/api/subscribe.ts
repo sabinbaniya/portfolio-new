@@ -6,8 +6,10 @@ import ErrorModel from "../../lib/models/ErrorLog";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const allowedOrigins =
     process.env.NODE_ENV === "production"
-      ? "sabinbaniya.com.np"
-      : "localhost:3000";
+      ? "https://sabinbaniya.com.np"
+      : "http://localhost:3000";
+
+  console.log(req.headers.origin);
 
   // only allow request from my domain
   if (req.headers.origin !== allowedOrigins)

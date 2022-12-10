@@ -27,7 +27,7 @@ const Tick = () => {
           d="M43.4583 90.4616L69.5803 116.584L130.161 56.0037"
           stroke="white"
           strokeWidth="15"
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
       </svg>
       <motion.p

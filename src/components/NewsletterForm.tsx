@@ -1,5 +1,10 @@
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { ScaleLoader } from "react-spinners";
+import { SubmissionStates } from "./ContactSection";
 import PrimaryButton from "./PrimaryButton";
+import FormSubmittedAnimation from "./FormSubmittedAnimation";
+import FormFailureAnimation from "./FormFailureAnimation";
 
 interface InputTypes {
   email: string;
@@ -11,9 +16,46 @@ const NewsletterForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<InputTypes>();
+  const [apiStatus, setApiStatus] = useState({
+    success: false,
+    message: "",
+    loading: false,
+  });
+  const [submissionState, setSubmissionState] =
+    useState<SubmissionStates | null>(null);
 
-  const onsubmit: SubmitHandler<InputTypes> = ({ email }) => {
-    console.log(email);
+  const onsubmit: SubmitHandler<InputTypes> = async ({ email }) => {
+    setSubmissionState("loading");
+    // setApiStatus({
+    //   success: false,
+    //   message: "",
+    //   loading: true,
+    // });
+    try {
+      // console.log("hi");
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      const json = await res.json();
+      if (json.success) return setSubmissionState("submitted");
+      return setSubmissionState("error");
+      // setApiStatus({
+      //   ...json,
+      //   loading: false,
+      // });
+    } catch (error) {
+      setSubmissionState("error");
+      console.error(error);
+      setApiStatus({
+        success: false,
+        message: "Unknown Error Occured",
+        loading: false,
+      });
+    }
   };
   return (
     <>
@@ -37,7 +79,30 @@ const NewsletterForm = () => {
           }`}
           placeholder="john@gmail.com"
         />
-        <PrimaryButton text="Subscribe" extraClasses="md:w-min w-full" />
+        <PrimaryButton
+          renderAs="btn"
+          // extraClasses="md:w-min w-full"
+          text={
+            submissionState === "loading" ? (
+              <ScaleLoader color="#fff" height={22} />
+            ) : submissionState === "submitted" ? (
+              <FormSubmittedAnimation />
+            ) : submissionState === "error" ? (
+              <FormFailureAnimation text="Couldn't subscribe" />
+            ) : (
+              "Subscribe"
+            )
+          }
+          extraClasses={`w-full ${
+            submissionState === "loading"
+              ? "opacity-50 pointer-events-none flex justify-center items-center"
+              : submissionState === "submitted"
+              ? "opacity-80 pointer-events-none flex justify-center items-center bg-green-600"
+              : submissionState === "error"
+              ? "opacity-80 pointer-events-none flex justify-center items-center bg-red-500"
+              : ""
+          }`}
+        />
       </form>
     </>
   );
