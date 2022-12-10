@@ -89,7 +89,7 @@ const AboutSection = () => {
           <p>
             Hey there 👋, I&apos;m Sabin Baniya, a full-stack web developer and
             designer based in Pokhara, Nepal. I help people & businesses create
-            their online presence through their website and google.{" "}
+            their online presence through their website.{" "}
             <span className="text-gray-400">
               Apart from work I like travelling & spending time with my friends.
             </span>

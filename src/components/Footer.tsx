@@ -72,10 +72,14 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
                 <AnimatedContactIcons
                   text="Twitter"
                   pathD={svgIconDValues.twitter}
+                  spacing="space-x-4"
+                  href="https://twitter.com/sabinbaniya_"
                 />
                 <AnimatedContactIcons
                   text="Github"
                   pathD={svgIconDValues.github}
+                  spacing="space-x-4"
+                  href="https://github.com/sabinbaniya"
                 />
                 {/* <AnimatedContactIcons text="Email" pathD={svgIconDValues.email} /> */}
               </ul>

@@ -145,11 +145,13 @@ const Layout = ({ children, blogPosts }: Props) => {
                       className="scale-[3]"
                       text=""
                       pathD={svgIconDValues.twitter}
+                      href="https://twitter.com/sabinbaniya_"
                     />
                     <AnimatedContactIcons
                       className="scale-[3]"
                       text=""
                       pathD={svgIconDValues.github}
+                      href="https://github.com/sabinbaniya"
                     />
                   </motion.div>
                 </motion.div>

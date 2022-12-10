@@ -72,12 +72,12 @@ const NewsletterForm = () => {
               message: "Please enter a valid email",
             },
           })}
-          className={`bg-transparent border-4 rounded-lg w-full p-4 border-[#272727] h-14 focus:outline-0 active:outline-0 transition-all placeholder:font-semibold ${
+          className={`bg-background text-sm border-[4px] sm:border-[6px] sm:text-base rounded-xl p-4 border-[#272727] h-14 w-full focus:outline-0 active:outline-0  autofill:bg-background transition-all  placeholder:font-semibold ${
             errors.email
-              ? "border-red-600 placeholder:text-red-800"
+              ? "border-red-600 placeholder:text-red-800 form-error"
               : "focus:border-[#3d3d3d]"
           }`}
-          placeholder="john@gmail.com"
+          placeholder="Your Email"
         />
         <PrimaryButton
           renderAs="btn"
@@ -93,7 +93,7 @@ const NewsletterForm = () => {
               "Subscribe"
             )
           }
-          extraClasses={`w-full ${
+          extraClasses={`w-full md:w-min ${
             submissionState === "loading"
               ? "opacity-50 pointer-events-none flex justify-center items-center"
               : submissionState === "submitted"

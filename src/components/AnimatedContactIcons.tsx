@@ -12,13 +12,26 @@ interface Props {
   text: string;
   pathD: string;
   className?: string;
+  spacing?: string;
+  href: string;
 }
 
-const AnimatedContactIcons = ({ text, pathD, className }: Props) => {
+const AnimatedContactIcons = ({
+  text,
+  pathD,
+  className,
+  spacing,
+  href,
+}: Props) => {
   const iconAnimationControls = useAnimationControls();
   return (
-    <motion.li
-      className="cursor-pointer flex items-center justify-between space-x-4"
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="norefferer noopener"
+      className={`cursor-pointer flex items-center justify-between ${
+        spacing || ""
+      }`}
       onHoverStart={() => {
         iconAnimationControls.set(iconAnimationVariants.init);
         iconAnimationControls.start(iconAnimationVariants.anim);
@@ -45,7 +58,7 @@ const AnimatedContactIcons = ({ text, pathD, className }: Props) => {
           strokeLinejoin="round"
         />
       </svg>
-    </motion.li>
+    </motion.a>
   );
 };
 

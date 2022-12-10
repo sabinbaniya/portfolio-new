@@ -92,7 +92,7 @@ const ContactSection = () => {
         <div className="basis-1/2 w-full">
           <form
             onSubmit={handleSubmit(onsubmit)}
-            className="space-y-6 max-w-lg"
+            className="space-y-6 max-w-md"
           >
             <div className="flex flex-col justify-start space-y-2">
               <label

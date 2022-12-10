@@ -37,9 +37,11 @@ const HeroSection = () => {
         <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex flex-col md:flex-row md:flex-wrap md:items-center md:gap-4 md:space-y-0 space-y-2">
           <span className="whitespace-nowra">Full-Stack Web Developer</span>{" "}
           <Dot className="hidden md:block" size={5} />
-          <span className="whitespace-nowra">UI/UX Designer</span>
+          <span className="whitespace-nowra">Dabbling in UI/UX Design</span>
           <Dot className="hidden md:block" size={5} />
-          <span className="whitespace-nowra">I also write about tech</span>
+          <span className="whitespace-nowra">Always Experimenting</span>
+          {/* Building resilient web applications on the web that are pleasent to
+          end users & maintainable for the future comers */}
         </p>
         <PrimaryButton
           text="Know More"
