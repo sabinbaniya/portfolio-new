@@ -12,7 +12,7 @@ interface Props {
 const Navbar = ({ setIsOpen, isOpen }: Props) => {
   return (
     <>
-      <nav className="backdrop-blur-md  border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/20 h-[10vh] md:h-[12vh]">
+      <nav className="backdrop-blur-md  border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/20 h-[12vh] max:h-[96px]">
         <div className="h-full flex justify-between items-center xl:max-w-screen-xl xl:mx-auto px-4">
           <div className="">
             <Image

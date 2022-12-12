@@ -6,9 +6,18 @@ interface Props {
   project_name: string;
   tags: string[];
   brief: string;
+  gradientClasses?: string;
+  href: string;
 }
 
-const ProjectSlide = ({ image, project_name, tags, brief }: Props) => {
+const ProjectSlide = ({
+  image,
+  project_name,
+  tags,
+  brief,
+  gradientClasses,
+  href,
+}: Props) => {
   return (
     <div className="px-6 sm:px-0 first:pl-4 last:pl-4 max-w-[100vw] sm:max-w-[50vw] md:max-w-[60vw] lg:max-w-[640px]">
       <div
@@ -18,7 +27,11 @@ const ProjectSlide = ({ image, project_name, tags, brief }: Props) => {
         }}
       >
         <div className="basis-[40%]"></div>
-        <div className="md:basis-[60%] flex flex-col justify-between pt-12 pb-4 px-4 md:px-0 md:py-16 bg-gradient-to-b md:bg-gradient-to-r from-transparent via-gray-800 to-gray-800 space-y-4">
+        <div
+          className={`md:basis-[60%] flex flex-col justify-between pt-12 pb-4 px-4 md:px-0 md:py-16 bg-gradient-to-b md:bg-gradient-to-r space-y-4 ${
+            gradientClasses || "from-transparent via-gray-800 to-gray-800 "
+          }`}
+        >
           <p className="text-2xl sm:text-3xl md:text-4xl font-bold">
             {project_name}
           </p>
@@ -29,7 +42,9 @@ const ProjectSlide = ({ image, project_name, tags, brief }: Props) => {
           </div>
           <p className="text-sm text-gray-300 font-medium">{brief}</p>
           <div>
-            <GradientButton text="View Details" fromProject />
+            <a href={href}>
+              <GradientButton text="Vist Site" fromProject />
+            </a>
           </div>
         </div>
       </div>

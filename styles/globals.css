@@ -121,3 +121,9 @@ select:-webkit-autofill:focus {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@media (min-width: 1280px) {
+  .xl\:work-container {
+    margin-left: max(0px, (100% - 1280px)/2); /* what you need */
+  }
+}
