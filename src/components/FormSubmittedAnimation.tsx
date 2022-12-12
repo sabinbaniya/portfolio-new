@@ -9,6 +9,7 @@ const Tick = () => {
         viewBox="0 0 173 177"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="scale-[0.8] sm:scale-100"
       >
         <motion.circle
           initial={{ pathLength: 0 }}
@@ -33,15 +34,17 @@ const Tick = () => {
       <motion.p
         initial={{
           opacity: 0,
-          maxWidth: 0,
-          fontSize: 0,
+          width: "0px",
+          scale: 0,
         }}
         animate={{
           opacity: 1,
-          maxWidth: "100%",
-          fontSize: "14px",
+          scale: 1,
+          width: "140px",
+          maxWidth: "1000px",
         }}
-        transition={{ delay: 1, duration: 0.2 }}
+        transition={{ delay: 1.5, duration: 0.2 }}
+        className="whitespace-nowrap text-xs sm:text-sm"
       >
         Submitted Successfully
       </motion.p>

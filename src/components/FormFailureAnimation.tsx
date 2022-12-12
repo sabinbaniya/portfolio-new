@@ -2,12 +2,6 @@ import { motion } from "framer-motion";
 const Tick = ({ text }: { text?: string }) => {
   return (
     <div className="flex justify-center items-center space-x-1 sm:space-x-2">
-      {/* <motion.span
-        initial={{}}
-        animate={{ left: "10%" }}
-        transition={{ delay: 1.7, duration: 0.2 }}
-        className="absolute left-0"
-      > */}
       <svg
         width="25"
         height="25"
@@ -45,22 +39,18 @@ const Tick = ({ text }: { text?: string }) => {
           strokeLinecap="round"
         />
       </svg>
-      {/* </motion.span> */}
-      {/* <div className="w-4"></div> */}
 
       <motion.p
         initial={{
           opacity: 0,
           width: "0px",
           scale: 0,
-          // fontSize: 0,
         }}
         animate={{
           opacity: 1,
           scale: 1,
           width: "200px",
           maxWidth: "1000px",
-          // fontSize: "14px",
         }}
         transition={{ delay: 1.5, duration: 0.2 }}
         className="whitespace-nowrap text-xs sm:text-sm"

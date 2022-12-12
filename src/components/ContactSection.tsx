@@ -25,7 +25,7 @@ const ContactSection = () => {
   } = useForm<FormInputs>();
 
   const [submissionState, setSubmissionState] =
-    useState<SubmissionStates | null>("error");
+    useState<SubmissionStates | null>(null);
 
   const onsubmit: SubmitHandler<FormInputs> = async (data) => {
     setSubmissionState("loading");
