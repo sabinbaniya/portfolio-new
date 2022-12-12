@@ -25,7 +25,7 @@ const ContactSection = () => {
   } = useForm<FormInputs>();
 
   const [submissionState, setSubmissionState] =
-    useState<SubmissionStates | null>(null);
+    useState<SubmissionStates | null>();
 
   const onsubmit: SubmitHandler<FormInputs> = async (data) => {
     setSubmissionState("loading");
@@ -78,7 +78,7 @@ const ContactSection = () => {
               src="/hero2.png"
               height={438}
               width={300}
-              className="max-h-[50vh] w-auto sm:max-h-[40vh] lg:max-h-[50vh]"
+              className="max-h-[50vh] w-auto sm:max-h-[40vh] lg:max-h-[50vh] "
               alt=""
             />
             <div className="bg-[#162334] rounded-xl relative -mt-10 sm:absolute sm:top-0 sm:right-10 ">
@@ -189,7 +189,7 @@ const ContactSection = () => {
                     ? "bg-green-600"
                     : submissionState === "error"
                     ? "bg-red-500"
-                    : ""
+                    : "bg-primary-blue"
                 }`}
               />
             </div>

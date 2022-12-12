@@ -95,12 +95,12 @@ const NewsletterForm = () => {
           }
           extraClasses={`w-full md:w-min ${
             submissionState === "loading"
-              ? "opacity-50 pointer-events-none flex justify-center items-center"
+              ? "opacity-50 pointer-events-none flex justify-center items-center bg-primary-blue"
               : submissionState === "submitted"
               ? "opacity-80 pointer-events-none flex justify-center items-center bg-green-600"
               : submissionState === "error"
               ? "opacity-80 pointer-events-none flex justify-center items-center bg-red-500"
-              : ""
+              : "bg-primary-blue"
           }`}
         />
       </form>
