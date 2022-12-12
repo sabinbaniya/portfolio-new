@@ -42,7 +42,7 @@ const ProjectSlide = ({
           </div>
           <p className="text-sm text-gray-300 font-medium">{brief}</p>
           <div>
-            <a href={href}>
+            <a href={href} target="_blank" rel="noopener noreferrer">
               <GradientButton text="Vist Site" fromProject />
             </a>
           </div>

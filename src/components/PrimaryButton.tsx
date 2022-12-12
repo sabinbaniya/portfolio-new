@@ -14,7 +14,9 @@ const PrimaryButton = ({ text, extraClasses, linkProp, renderAs }: Props) => {
       <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className={`bg-primary-blue inline-block text-center px-8 py-2 rounded-md font-semibold hover:shadow-lg hover:shadow-primary-blue/70 ${extraClasses}`}
+        className={`relative inline-block text-center px-8 py-2 rounded-md font-semibold hover:shadow-lg hover:shadow-primary-blue/70 ${
+          extraClasses || "bg-primary-blue "
+        }`}
       >
         {text}
       </motion.button>
@@ -25,7 +27,9 @@ const PrimaryButton = ({ text, extraClasses, linkProp, renderAs }: Props) => {
       href={linkProp}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      className={`bg-primary-blue inline-block text-center px-8 py-2 rounded-md font-semibold hover:shadow-lg hover:shadow-primary-blue/70 ${extraClasses}`}
+      className={`relative inline-block text-center px-8 py-2 rounded-md font-semibold hover:shadow-lg hover:shadow-primary-blue/70 ${
+        extraClasses || "bg-primary-blue "
+      }`}
     >
       {text}
     </motion.a>

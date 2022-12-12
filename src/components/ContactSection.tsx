@@ -25,7 +25,7 @@ const ContactSection = () => {
   } = useForm<FormInputs>();
 
   const [submissionState, setSubmissionState] =
-    useState<SubmissionStates | null>(null);
+    useState<SubmissionStates | null>("error");
 
   const onsubmit: SubmitHandler<FormInputs> = async (data) => {
     setSubmissionState("loading");
@@ -94,7 +94,7 @@ const ContactSection = () => {
             onSubmit={handleSubmit(onsubmit)}
             className="space-y-6 max-w-md"
           >
-            <div className="flex flex-col justify-start space-y-2">
+            <div className="relative flex flex-col justify-start space-y-2">
               <label
                 htmlFor="name"
                 className={`text-base sm:text-lg font-semibold ${
@@ -114,7 +114,7 @@ const ContactSection = () => {
                 placeholder="Your Name"
               />
             </div>
-            <div className="flex flex-col justify-start space-y-2">
+            <div className="flex relative flex-col justify-start space-y-2">
               <label
                 htmlFor="email"
                 className={`text-base sm:text-lg font-semibold ${
@@ -140,6 +140,11 @@ const ContactSection = () => {
                     : "focus:border-[#3d3d3d]"
                 }`}
               />
+              {errors.email?.type === "pattern" && (
+                <span className="absolute right-4 -bottom-6 text-xs text-red-600 font-medium">
+                  {errors.email?.message}
+                </span>
+              )}
             </div>
             <div className="flex flex-col justify-start space-y-2">
               <label
@@ -177,13 +182,13 @@ const ContactSection = () => {
                     "Send Message"
                   )
                 }
-                extraClasses={`w-full ${
+                extraClasses={`w-full opacity-50 pointer-events-none flex justify-center items-center  ${
                   submissionState === "loading"
-                    ? "opacity-50 pointer-events-none flex justify-center items-center"
+                    ? "bg-primary-blue"
                     : submissionState === "submitted"
-                    ? "opacity-80 pointer-events-none flex justify-center items-center bg-green-600"
+                    ? "bg-green-600"
                     : submissionState === "error"
-                    ? "opacity-80 pointer-events-none flex justify-center items-center bg-red-500"
+                    ? "bg-red-500"
                     : ""
                 }`}
               />

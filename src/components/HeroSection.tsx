@@ -46,7 +46,7 @@ const HeroSection = () => {
         <PrimaryButton
           text="Know More"
           linkProp="#about"
-          extraClasses="w-full md:w-auto xs:max-w-[425px]"
+          extraClasses="w-full md:w-auto xs:max-w-[425px] bg-primary-blue"
         />
       </div>
       <div className="relative max-w-min mx-auto select-none sm:mt-20 lg:mr-20 grid place-items-center w-full">

@@ -21,9 +21,9 @@ const BlogLink = ({ image_url, title, description, date, link }: Props) => {
       target="_blank"
       rel="norefferer noopener"
     >
-      <div className="grid grid-cols-3 bg-gray-900 rounded-lg overflow-hidden">
+      <div className="grid grid-cols-3 items-stretch bg-gray-900 rounded-lg overflow-hidden">
         <div
-          className="bg-center bg-cover sm:col-span-3 h-20 md:col-span-1"
+          className="bg-center bg-cover sm:col-span-3 min-h-[5rem] md:col-span-1"
           style={{
             backgroundImage: `url(${image_url})`,
           }}
