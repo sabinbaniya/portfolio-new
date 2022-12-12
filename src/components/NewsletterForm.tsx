@@ -22,7 +22,7 @@ const NewsletterForm = () => {
     loading: false,
   });
   const [submissionState, setSubmissionState] =
-    useState<SubmissionStates | null>(null);
+    useState<SubmissionStates | null>("error");
 
   const onsubmit: SubmitHandler<InputTypes> = async ({ email }) => {
     setSubmissionState("loading");
@@ -86,9 +86,9 @@ const NewsletterForm = () => {
             submissionState === "loading" ? (
               <ScaleLoader color="#fff" height={22} />
             ) : submissionState === "submitted" ? (
-              <FormSubmittedAnimation />
+              <FormSubmittedAnimation text="Subscribed successfully :)" />
             ) : submissionState === "error" ? (
-              <FormFailureAnimation text="Couldn't subscribe" />
+              <FormFailureAnimation text="Couldn't subscribe :(" />
             ) : (
               "Subscribe"
             )

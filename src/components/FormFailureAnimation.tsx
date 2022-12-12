@@ -43,13 +43,13 @@ const Tick = ({ text }: { text?: string }) => {
       <motion.p
         initial={{
           opacity: 0,
-          width: "0px",
+          minWidth: "0px",
           scale: 0,
         }}
         animate={{
           opacity: 1,
           scale: 1,
-          width: "200px",
+          minWidth: "140px",
           maxWidth: "1000px",
         }}
         transition={{ delay: 1.5, duration: 0.2 }}

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { NodeNextRequest } from "next/dist/server/base-http/node";
-const Tick = () => {
+const Tick = ({ text }: { text?: string }) => {
   return (
     <div className="flex justify-center items-center space-x-2">
       <svg
@@ -34,19 +33,19 @@ const Tick = () => {
       <motion.p
         initial={{
           opacity: 0,
-          width: "0px",
+          minWidth: "0px",
           scale: 0,
         }}
         animate={{
           opacity: 1,
           scale: 1,
-          width: "140px",
+          minWidth: "140px",
           maxWidth: "1000px",
         }}
         transition={{ delay: 1.5, duration: 0.2 }}
         className="whitespace-nowrap text-xs sm:text-sm"
       >
-        Submitted Successfully
+        {text || "Submitted Successfully"}
       </motion.p>
     </div>
   );
