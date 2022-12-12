@@ -22,7 +22,7 @@ const NewsletterForm = () => {
     loading: false,
   });
   const [submissionState, setSubmissionState] =
-    useState<SubmissionStates | null>("error");
+    useState<SubmissionStates | null>();
 
   const onsubmit: SubmitHandler<InputTypes> = async ({ email }) => {
     setSubmissionState("loading");
