@@ -22,6 +22,7 @@ const ContactSection = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormInputs>();
 
   const [submissionState, setSubmissionState] =
@@ -47,14 +48,16 @@ const ContactSection = () => {
       const json = await res.json();
       if (json.success === "true") {
         setSubmissionState("submitted");
-        setTimeout(() => {
-          setSubmissionState(null);
-        }, 5000);
         return;
       }
       setSubmissionState("error");
     } catch (error) {
       setSubmissionState("error");
+    } finally {
+      setTimeout(() => {
+        reset();
+        setSubmissionState(null);
+      }, 5000);
     }
   };
   return (
@@ -182,13 +185,13 @@ const ContactSection = () => {
                     "Send Message"
                   )
                 }
-                extraClasses={`w-full opacity-50 pointer-events-none flex justify-center items-center  ${
+                extraClasses={`w-full flex justify-center items-center  ${
                   submissionState === "loading"
-                    ? "bg-primary-blue"
+                    ? "bg-primary-blue  opacity-50 pointer-events-none"
                     : submissionState === "submitted"
-                    ? "bg-green-600"
+                    ? "bg-green-600  opacity-50 pointer-events-none"
                     : submissionState === "error"
-                    ? "bg-red-500"
+                    ? "bg-red-500  opacity-50 pointer-events-none"
                     : "bg-primary-blue"
                 }`}
               />
