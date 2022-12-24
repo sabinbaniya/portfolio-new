@@ -7,7 +7,7 @@ import { Fragment } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import client from "../../src/helpers/apollo-client";
 import { gql } from "@apollo/client";
-import { JetBrains_Mono, Karla } from "@next/font/google";
+import { Karla, JetBrains_Mono } from "@next/font/google";
 
 const karla = Karla({
   variable: "--font-karla",
@@ -15,7 +15,7 @@ const karla = Karla({
 });
 
 const jetbrainMono = JetBrains_Mono({
-  variable: "--font-jbm",
+  variable: "--jetbrains",
   display: "swap",
 });
 
@@ -88,13 +88,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const tagsAndThierColor = new Map(
-  Object.entries({
-    "next-js": "black",
-    tailwindcss: "teal",
-  })
-);
-
 const Slugs = (props: any) => {
   // console.log(props.post.data.post.contentMarkdown);
   return (
@@ -125,7 +118,31 @@ const Slugs = (props: any) => {
             {new Date(props.post.data.post.dateAdded).toDateString()}
           </div>
           <div id="blog-post-body" className={"text-xl " + karla.className}>
-            <Markdown rehypePlugins={[rehypeRaw]}>
+            <Markdown
+              rehypePlugins={[rehypeRaw]}
+              components={{
+                code({ node, inline, className, children, ...props }) {
+                  // const match = /language-(\w+)/.exec(className || '')
+                  // return !inline && match ? (
+                  //   <SyntaxHighlighter
+                  //     children={String(children).replace(/\n$/, '')}
+                  //     style={dark}
+                  //     language={match[1]}
+                  //     PreTag="div"
+                  //     {...props}
+                  //   />
+                  // ) : (
+                  return (
+                    <code
+                      className={className || "" + " " + jetbrainMono.className}
+                      {...props}
+                    >
+                      {children}
+                    </code>
+                  );
+                },
+              }}
+            >
               {props.post.data.post.content}
             </Markdown>
           </div>
