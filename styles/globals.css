@@ -1,3 +1,4 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Karla&family=JetBrains+Mono&display=swap"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -104,15 +105,37 @@ select:-webkit-autofill:focus {
 }
 
 #blog-post-body img {
-  @apply rounded-xl overflow-hidden;
+  @apply rounded-xl overflow-hidden my-4;
 }
 
 #blog-post-body p {
-  @apply my-4;
+  @apply my-6 leading-loose;
 }
 
 #blog-post-body pre {
-  @apply bg-gray-700 px-8 py-4 rounded-lg;
+  @apply bg-slate-800/50 px-8 py-4 rounded-lg relative z-0 overflow-x-auto;
+}
+
+#blog-post-body :not(pre) code {
+  @apply bg-slate-800/70 px-2 rounded-md py-0.5;
+}
+
+#blog-post-body pre p code {
+  @apply bg-transparent px-0;
+}
+
+#blog-post-body pre code {
+  font-family: var(--font-jbm);
+
+  /* @apply break-words; */
+}
+
+.nextjs {
+  @apply text-black bg-white/80;
+}
+
+.tailwind-css {
+  @apply text-indigo-900 bg-indigo-400;
 }
 
 .clip-text-3-line {

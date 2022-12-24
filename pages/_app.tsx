@@ -2,8 +2,9 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Montserrat } from "@next/font/google";
 import "@splidejs/react-splide/css";
-import { useEffect } from "react";
-import { parse } from "rss-to-json";
+import "highlight.js/styles/atom-one-dark.css";
+
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -27,20 +28,22 @@ const montserrat = Montserrat({
 });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  // useEffect(() => {
-  //   (async () => {
-  //     const res = await fetch(
-  //       "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sabin-baniya"
-  //     );
-  //     // const data = JSON.stringify(res);
-  //     console.log(await res.json());
-  //   })();
-  // }, []);
+  const client = new ApolloClient({
+    uri: "https://api.hashnode.com/",
+    // headers: {
+    //   Authorization: `Bearer: ${process.env.RANDOM_HASH as string}`,
+    //   "Content-Type": "application/json",
+    // },
+    cache: new InMemoryCache(),
+  });
+
   return (
     <>
-      <main className={`${montserrat.variable} font-sans relative`}>
-        <Component {...pageProps} />
-      </main>
+      <ApolloProvider client={client}>
+        <main className={`${montserrat.variable} font-sans relative`}>
+          <Component {...pageProps} />
+        </main>
+      </ApolloProvider>
     </>
   );
 };
