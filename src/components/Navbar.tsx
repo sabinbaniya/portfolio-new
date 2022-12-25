@@ -16,7 +16,7 @@ const Navbar = ({ setIsOpen, isOpen, fromBlogs, title }: Props) => {
     <>
       <nav className="backdrop-blur-md  border-b border-b-gray-600 fixed top-0 left-0 right-0 z-50 bg-background/20 h-[12vh] max:h-[96px]">
         <div className="h-full flex justify-between items-center xl:max-w-screen-xl xl:mx-auto px-4">
-          <div className="">
+          <Link href="/">
             <Image
               src="/logo.png"
               alt=""
@@ -24,7 +24,7 @@ const Navbar = ({ setIsOpen, isOpen, fromBlogs, title }: Props) => {
               height={100}
               className="w-6 md:w-8"
             />
-          </div>
+          </Link>
           {fromBlogs ? (
             <p className="hidden sm:block max-w-[50ch] whitespace-nowrap overflow-hidden text-ellipsis">
               {title}

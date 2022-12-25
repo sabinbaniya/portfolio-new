@@ -133,11 +133,11 @@ const Slugs = (props: any) => {
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content={props.post.data.post.title} />
+        <meta property="twitter:domain" content={"sabinbaniya.com.np"} />
+
         <meta
-          property="twitter:domain"
-          content={
-            "https://sabinbaniya.com.np/blogs/" + props.post.data.post.slug
-          }
+          property="twitter:url"
+          content={`https://sabinbaniya.com.np/blogs/${props.post.data.post.slug}`}
         />
         <meta
           property="twitter:description"
