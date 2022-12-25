@@ -10,6 +10,8 @@ import Navbar from "./Navbar";
 interface Props {
   children: ReactNode;
   blogPosts: BlogPosts[];
+  fromBlogs?: boolean;
+  title?: string;
 }
 
 const variants = {
@@ -67,7 +69,7 @@ const MenuItemVariants = {
     },
   },
 };
-const Layout = ({ children, blogPosts }: Props) => {
+const Layout = ({ children, blogPosts, fromBlogs, title }: Props) => {
   const [showLoader, setShowLoader] = useState(true);
   const [isOpen, toggleOpen] = useCycle(false, true);
 
@@ -89,7 +91,7 @@ const Layout = ({ children, blogPosts }: Props) => {
           isOpen ? "overflow-hidden" : ""
         }`}
       >
-        <Navbar isOpen={isOpen} />
+        <Navbar fromBlogs={fromBlogs} title={title} isOpen={isOpen} />
         <AnimatePresence>
           {/* background for menu that grows and shrinks  */}
           {isOpen && (
@@ -159,7 +161,7 @@ const Layout = ({ children, blogPosts }: Props) => {
             </>
           )}
         </AnimatePresence>
-        <div className="sm:hidden fixed top-6 z-50 right-5">
+        <div className="sm:hidden fixed top-7 z-50 right-5">
           <button
             onClick={() => handleMenuClick()}
             className={`relative h-6 w-8 grid place-items-center z-[60] focus:outline-none`}

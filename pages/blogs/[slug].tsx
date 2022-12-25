@@ -8,6 +8,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import client from "../../src/helpers/apollo-client";
 import { gql } from "@apollo/client";
 import { Karla, JetBrains_Mono } from "@next/font/google";
+import Image from "next/image";
 
 const karla = Karla({
   variable: "--font-karla",
@@ -77,10 +78,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           }
           contentMarkdown
           content
+          coverImage
+          brief
         }
       }
   `,
   });
+
   // console.log(data);
   return {
     // Passed to the page component as props
@@ -89,14 +93,67 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Slugs = (props: any) => {
-  // console.log(props.post.data.post.contentMarkdown);
+  console.log(props);
   return (
     <>
       <Head>
         <title>{`${props.post.data.post.title} by Sabin Baniya`}</title>
+        <meta
+          name="description"
+          content={
+            props.post.data.post?.brief?.replace("\n", "") ||
+            props.post.data.post.title
+          }
+        />
+        <link
+          rel="canonical"
+          href={`https://sabinbaniya.com.np/blogs/${props.post.data.post.slug}`}
+        />
+        <meta property="og:title" content={props.post.data.post.title} />
+        <meta
+          property="og:description"
+          content={
+            props.post.data.post?.brief?.replace("\n", "") ||
+            props.post.data.post.title
+          }
+        />
+        <meta property="og:site_name" content="Sabin Baniya" />
+        <meta property="og:type" content="Article" />
+        <meta
+          property="og:url"
+          content={`https://sabinbaniya.com.np/blogs/${props.post.data.post.slug}`}
+        />
+        <meta
+          name="image"
+          property="og:image"
+          content={
+            props.post.data.post.coverImage +
+            "?w=300&h=157.5&fit=crop&crop=entropy&auto=compress,format&format=webp&fm=png"
+          }
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={props.post.data.post.title} />
+        <meta
+          property="twitter:description"
+          content={
+            props.post.data.post?.brief?.replace("\n", "") ||
+            props.post.data.post.title
+          }
+        />
+        <meta
+          property="twitter:image"
+          content={
+            props.post.data.post.coverImage +
+            "?w=300&h=157.5&fit=crop&crop=entropy&auto=compress,format&format=webp&fm=png"
+          }
+        />
       </Head>
-      <Layout blogPosts={[] as BlogPosts[]}>
-        <section className="max-w-3xl mx-auto mt-10">
+      <Layout
+        fromBlogs
+        title={props.post.data.post.title}
+        blogPosts={[] as BlogPosts[]}
+      >
+        <section className="max-w-3xl mx-auto mt-10 px-4">
           <div className="flex space-x-4">
             {props.post.data.post.tags.map((el: any) => (
               <Fragment key={el.slug}>
@@ -108,13 +165,28 @@ const Slugs = (props: any) => {
               </Fragment>
             ))}
           </div>
-          <div className="text-4xl leading-relaxed font-bold my-8">
-            <Markdown rehypePlugins={[rehypeRaw]}>
+          <Image
+            src={props.post.data.post.coverImage}
+            height={1080}
+            width={1920}
+            alt={props.post.data.post.title}
+            className="rounded-lg mb-8 mt-4"
+          />
+          <div className="text-2xl sm:text-4xl leading-relaxed sm:leading-[1.7] font-bold my-8">
+            <Markdown
+              rehypePlugins={[rehypeRaw]}
+              components={{
+                p: ({ children }) => {
+                  // console.log(params);
+                  return <h1>{children}</h1>;
+                },
+              }}
+            >
               {props.post.data.post.title}
             </Markdown>
           </div>
-          <div className={"mb-4 font-medium " + karla.className}>
-            Created on:{" "}
+          <div className={"mb-4 font-medium underline " + karla.className}>
+            Published on:{" "}
             {new Date(props.post.data.post.dateAdded).toDateString()}
           </div>
           <div id="blog-post-body" className={"text-xl " + karla.className}>
