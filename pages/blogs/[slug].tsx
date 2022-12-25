@@ -134,6 +134,12 @@ const Slugs = (props: any) => {
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content={props.post.data.post.title} />
         <meta
+          property="twitter:domain"
+          content={
+            "https://sabinbaniya.com.np/blogs/" + props.post.data.post.slug
+          }
+        />
+        <meta
           property="twitter:description"
           content={
             props.post.data.post?.brief?.replace("\n", "") ||
@@ -144,7 +150,7 @@ const Slugs = (props: any) => {
           property="twitter:image"
           content={
             props.post.data.post.coverImage +
-            "?w=300&h=157.5&fit=crop&crop=entropy&auto=compress,format&format=webp&fm=png"
+            "?w=600&h=315&fit=crop&crop=entropy&auto=compress,format&format=webp&fm=png"
           }
         />
       </Head>
