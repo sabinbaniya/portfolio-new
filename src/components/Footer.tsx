@@ -28,15 +28,14 @@ const Footer = ({ blogPosts }: { blogPosts: BlogPosts[] }) => {
           <div className="order-1 md:pl-0 basis-[35%]">
             <p className="cursor-default text-xl font-semibold mb-2">Blogs</p>
             <div className="space-y-4 mt-6">
-              {blogPosts.map((el) => (
+              {blogPosts.slice(0, 2).map((el) => (
                 <BlogLink
-                  key={el.link}
-                  image_url={el.thumbnail}
+                  key={el.slug}
+                  image_url={el.coverImage}
                   title={el.title}
-                  description={el.description}
-                  date={el.pubDate}
-                  // link={/(?<=m\/)(.*)(?=\?)/.exec(el.link)}
-                  link={[el.link]}
+                  description={el.brief}
+                  date={el.dateAdded}
+                  link={el.slug}
                 />
               ))}
             </div>

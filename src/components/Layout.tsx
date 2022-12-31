@@ -1,4 +1,5 @@
 import { AnimatePresence, motion, useCycle } from "framer-motion";
+import Link from "next/link";
 import React, { ReactNode, useEffect, useState } from "react";
 import { delayForLoading } from "../constants";
 import { BlogPosts } from "../types";
@@ -111,34 +112,30 @@ const Layout = ({ children, blogPosts, fromBlogs, title }: Props) => {
                   variants={variants}
                   className="text-white z-40 relative left-0 flex flex-col space-y-8 text-6xl font-black"
                 >
-                  <motion.a
+                  <motion.span
                     variants={MenuItemVariants}
                     onClick={() => handleMenuClick()}
-                    href="#home"
                   >
-                    Home
-                  </motion.a>
-                  <motion.a
+                    <Link href="/blogs">Blogs</Link>
+                  </motion.span>
+                  <motion.span
                     variants={MenuItemVariants}
                     onClick={() => handleMenuClick()}
-                    href="#about"
                   >
-                    About
-                  </motion.a>
-                  <motion.a
+                    <Link href="/#about">About</Link>
+                  </motion.span>
+                  <motion.span
                     variants={MenuItemVariants}
                     onClick={() => handleMenuClick()}
-                    href="#work"
                   >
-                    Work
-                  </motion.a>
-                  <motion.a
+                    <Link href="/#work">Work</Link>
+                  </motion.span>
+                  <motion.span
                     variants={MenuItemVariants}
                     onClick={() => handleMenuClick()}
-                    href="#contact"
                   >
-                    Contact
-                  </motion.a>
+                    <Link href="/#contact">Contact</Link>
+                  </motion.span>
                   <motion.div
                     variants={MenuItemVariants}
                     className="flex space-x-16 px-6 pt-8 "

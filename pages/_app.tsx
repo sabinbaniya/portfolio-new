@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { Montserrat } from "@next/font/google";
 import "@splidejs/react-splide/css";
 import "highlight.js/styles/atom-one-dark.css";
-
+import NextNProgress from "nextjs-progressbar";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const montserrat = Montserrat({
@@ -39,6 +39,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <NextNProgress
+        // transformCSS={(css) => <style>{css}</style>}
+        color="linear-gradient(101deg, #004dca, #649fff)"
+        height={5}
+        options={{ showSpinner: false }}
+      />
       <ApolloProvider client={client}>
         <main className={`${montserrat.variable} font-sans relative`}>
           <Component {...pageProps} />

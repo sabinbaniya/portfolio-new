@@ -1,7 +1,7 @@
 export interface BlogPosts {
-  link: string;
-  thumbnail: string;
+  slug: string;
+  coverImage: string;
   title: string;
-  description: string;
-  pubDate: string;
+  brief: string;
+  dateAdded: string;
 }

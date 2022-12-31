@@ -10,16 +10,15 @@ interface Props {
   title: string;
   description: string;
   date: string;
-  link: string[];
+  link: string;
 }
 
 const BlogLink = ({ image_url, title, description, date, link }: Props) => {
   return (
     <Link
-      // href={"/blogs/" + (link !== null ? link[0] : "")}
-      href={link[0]}
-      target="_blank"
+      href={`/blogs/${link}`}
       rel="norefferer noopener"
+      className="block  hover:ring hover:ring-primary-blue hover:ring-offset-4 hover:ring-offset-background transition-all rounded-lg"
     >
       <div className="grid grid-cols-3 items-stretch bg-gray-900 rounded-lg overflow-hidden">
         <div

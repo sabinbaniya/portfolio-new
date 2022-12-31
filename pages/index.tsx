@@ -7,34 +7,46 @@ import ContactSection from "../src/components/ContactSection";
 import { BlogPosts } from "../src/types";
 import medium_post_sample_data from "../public/medium_post_response.json";
 import Layout from "../src/components/Layout";
+import client from "../src/helpers/apollo-client";
+import { gql } from "@apollo/client";
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  if (process.env.NODE_ENV === "production") {
-    const res = await fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sabin-baniya"
-    );
-    const data = await res.json();
-    return {
-      props: {
-        blogPosts: data.items as BlogPosts[],
-      },
-    };
-  } else {
-    return {
-      props: {
-        blogPosts: medium_post_sample_data.items,
-      },
-    };
-  }
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({
+    // user(username: "sabinbaniya") {
+    query: gql`
+      {
+        user(username: "juliafmorgado") {
+          publication {
+            posts {
+              slug
+              title
+              type
+              totalReactions
+              dateAdded
+              brief
+              coverImage
+              contentMarkdown
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      data: data.user.publication.posts,
+    },
+  };
 };
 
-const Home: NextPage<{ blogPosts: BlogPosts[] }> = ({ blogPosts }) => {
+const Home: NextPage<{ data: BlogPosts[] }> = ({ data }) => {
   return (
     <>
       <Head>
         <title>Sabin Baniya | Personal Portfolio Website</title>
       </Head>
-      <Layout blogPosts={blogPosts}>
+      <Layout blogPosts={data}>
         <section className=" ">
           <HeroSection />
           <AboutSection />

@@ -32,35 +32,38 @@ const Navbar = ({ setIsOpen, isOpen, fromBlogs, title }: Props) => {
           ) : (
             <>
               <div className="hidden sm:flex text-sm md:text-base justify-between items-center space-x-2 font-semibold">
-                <a
-                  href="#home"
+                <Link
+                  scroll={false}
+                  href="/#home"
                   className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
                 >
                   Home
-                </a>
-                <a
-                  href="#about"
+                </Link>
+                <Link
+                  scroll={false}
+                  href="/#about"
                   className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
                 >
                   About
-                </a>
-                <a
-                  href="#work"
+                </Link>
+                <Link
+                  scroll={false}
+                  href="/#work"
                   className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
                 >
                   My Works
-                </a>
-                {/* <Link
-            href="/blogs"
-            className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
-          >
-            Blog
-          </Link> */}
+                </Link>
+                <Link
+                  href="/blogs"
+                  className="hover:bg-gray-700 transition-all px-4 py-2 rounded-lg"
+                >
+                  Blog
+                </Link>
               </div>
               <div className="hidden sm:block font-semibold">
-                <a href="#contact">
+                <Link scroll={false} href="/#contact">
                   <GradientButton text="Contact Me" />
-                </a>
+                </Link>
               </div>
             </>
           )}

@@ -24,9 +24,10 @@ const jetbrainMono = JetBrains_Mono({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query({
+    // user(username: "sabinbaniya") {
     query: gql`
       {
-        user(username: "sabinbaniya") {
+        user(username: "juliafmorgado") {
           publication {
             posts {
               slug
@@ -53,11 +54,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // const queryURL = ;
   const { data } = await client.query({
+    // hostname: "sabinbaniya"
     query: gql`
       {
         post(
           slug: "${params?.slug}" ,
-          hostname: "sabinbaniya"
+          hostname: "juliafmorgado"
         ) {
           _id
           sourcedFromGithub
@@ -85,10 +87,32 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   `,
   });
 
+  const { data: data2 } = await client.query({
+    // user(username: "sabinbaniya") {
+    query: gql`
+      {
+        user(username: "juliafmorgado") {
+          publication {
+            posts {
+              slug
+              title
+              type
+              totalReactions
+              dateAdded
+              brief
+              coverImage
+              contentMarkdown
+            }
+          }
+        }
+      }
+    `,
+  });
+
   // console.log(data);
   return {
     // Passed to the page component as props
-    props: { post: { data } },
+    props: { post: { data }, data: data2 },
   };
 };
 
@@ -157,7 +181,7 @@ const Slugs = (props: any) => {
       <Layout
         fromBlogs
         title={props.post.data.post.title}
-        blogPosts={[] as BlogPosts[]}
+        blogPosts={props.data.user.publication.posts}
       >
         <section className="max-w-3xl mx-auto mt-10 px-4">
           <div className="flex space-x-4">
