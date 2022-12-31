@@ -15,10 +15,9 @@ const karla = Karla({
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
-    // user(username: "sabinbaniya") {
     query: gql`
       {
-        user(username: "juliafmorgado") {
+        user(username: "sabinbaniya") {
           publication {
             posts {
               slug

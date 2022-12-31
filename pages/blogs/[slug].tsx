@@ -24,10 +24,9 @@ const jetbrainMono = JetBrains_Mono({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query({
-    // user(username: "sabinbaniya") {
     query: gql`
       {
-        user(username: "juliafmorgado") {
+        user(username: "sabinbaniya") {
           publication {
             posts {
               slug
@@ -54,12 +53,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // const queryURL = ;
   const { data } = await client.query({
-    // hostname: "sabinbaniya"
     query: gql`
-      {
-        post(
-          slug: "${params?.slug}" ,
-          hostname: "juliafmorgado"
+    {
+      post(
+        slug: "${params?.slug}" ,
+        hostname: "sabinbaniya"
         ) {
           _id
           sourcedFromGithub
@@ -88,10 +86,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   });
 
   const { data: data2 } = await client.query({
-    // user(username: "sabinbaniya") {
     query: gql`
       {
-        user(username: "juliafmorgado") {
+        user(username: "sabinbaniya") {
           publication {
             posts {
               slug
@@ -117,7 +114,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Slugs = (props: any) => {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <Head>
