@@ -9,6 +9,10 @@ const Document = () => {
           name="description"
           content="Sabin Baniya is a full-stack web developer and UI Designer currently based in Pokhara, Nepal. This portfolio website is a showcase of all the past relevent experience in the field of web development & design. You can learn few things about me here, or also checkout my blog where I write about progamming in general."
         />
+        <meta
+          name="google-site-verification"
+          content="W4Hu3aVp0RbTg0s9pHDmPJcrqJ4bBtRvT4te5vQQp5Q"
+        />
       </Head>
       <body>
         <Main />
