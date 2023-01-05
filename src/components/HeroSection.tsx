@@ -24,17 +24,19 @@ const greetings = ["Welcome", "Namaste"];
 const HeroSection = () => {
   return (
     <section
-      className="px-4 flex-col sm:flex-row sm:space-y-0 space-y-32 my-14 flex sm:justify-between sm:items-center sm:my-28 lg:my-40 scroll-mt-80 xs:max-w-[425px] sm:max-w-none xs:mx-auto sm:space-x-0 xl:max-w-screen-xl xl:mx-auto"
+      className="my-14 flex scroll-mt-80 flex-col space-y-32 px-4 xs:mx-auto xs:max-w-[425px] sm:my-28 sm:max-w-none sm:flex-row sm:items-center sm:justify-between sm:space-y-0 sm:space-x-0 lg:my-40 xl:mx-auto xl:max-w-screen-xl"
       id="home"
     >
       <div className="space-y-8 lg:space-y-6">
-        <div className="text-3xl xs:text-4xl sm:text-3xl md:text-5xl lg:text-6xl font-black space-y-3 sm:space-y-4">
-          <h1>Hey there</h1>
-          <h1 className="leading-normal text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-primary-light-blue to-primary-light-blue">
-            {greetings[0]} I&apos;m Sabin
+        <div className="text-3xl font-black xs:text-4xl sm:text-3xl md:text-5xl lg:text-6xl">
+          <h1 className="space-y-3 sm:space-y-4">
+            <span className="block">Hey there</span>
+            <span className="block bg-gradient-to-r from-primary-blue via-primary-light-blue to-primary-light-blue bg-clip-text leading-normal text-transparent">
+              {greetings[0]} I&apos;m Sabin
+            </span>
           </h1>
         </div>
-        <p className="text-base text-gray-500 font-semibold tracking-wide leading-relaxed flex flex-col md:flex-row md:flex-wrap md:items-center md:gap-4 md:space-y-0 space-y-2">
+        <p className="flex flex-col space-y-2 text-base font-semibold leading-relaxed tracking-wide text-gray-500 md:flex-row md:flex-wrap md:items-center md:gap-4 md:space-y-0">
           <span className="whitespace-nowra">Full-Stack Web Developer</span>{" "}
           <Dot className="hidden md:block" size={5} />
           <span className="whitespace-nowra">Dabbling in UI/UX Design</span>
@@ -49,10 +51,10 @@ const HeroSection = () => {
           extraClasses="w-full md:w-auto xs:max-w-[425px] bg-primary-blue"
         />
       </div>
-      <div className="relative max-w-min mx-auto select-none sm:mt-20 lg:mr-20 grid place-items-center w-full">
+      <div className="relative mx-auto grid w-full max-w-min select-none place-items-center sm:mt-20 lg:mr-20">
         <Image
           src="/hero.png"
-          className="max-w-[200px] xs:max-w-[300px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[400px] pointer-events-none select-none"
+          className="pointer-events-none max-w-[200px] select-none xs:max-w-[300px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[400px]"
           alt=""
           height={1484.47}
           width={982.58}

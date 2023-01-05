@@ -62,21 +62,20 @@ const ContactSection = () => {
   };
   return (
     <section
-      className="scroll-mt-20 px-4 xs:max-w-[425px] mx-auto sm:max-w-none xl:max-w-screen-xl xl:mx-auto"
+      className="mx-auto scroll-mt-20 px-4 xs:max-w-[425px] sm:max-w-none xl:mx-auto xl:max-w-screen-xl"
       id="contact"
     >
       <SlidingHeading
         dataText="Let's Talk Let's Talk Let's Talk Let's Talk
-        Let's TalkLet's TalkLet's TalkLet's TalkLet's
-        Talk"
+        Let's Talk Let's Talk Let's Talk Let's Talk Let's Talk"
       >
         Let&apos;s Talk Let&apos;s Talk Let&apos;s Talk Let&apos;s Talk
-        Let&apos;s TalkLet&apos;s TalkLet&apos;s TalkLet&apos;s TalkLet&apos;s
-        Talk
+        Let&apos;s Talk Let&apos;s Talk Let&apos;s Talk Let&apos;s Talk
+        Let&apos;s Talk
       </SlidingHeading>
-      <section className="flex flex-col sm:justify-between sm:flex-row mb-20 items-center">
+      <section className="mb-20 flex flex-col items-center sm:flex-row sm:justify-between">
         <div className="hidden basis-1/2 sm:block">
-          <div className="relative flex sm:justify-start sm:w-full sm:pt-10 lg:justify-center">
+          <div className="relative flex sm:w-full sm:justify-start sm:pt-10 lg:justify-center">
             <Image
               src="/hero2.png"
               height={438}
@@ -84,24 +83,24 @@ const ContactSection = () => {
               className="max-h-[50vh] w-auto sm:max-h-[40vh] lg:max-h-[50vh] "
               alt=""
             />
-            <div className="bg-[#162334] rounded-xl relative -mt-10 sm:absolute sm:top-0 sm:right-10 ">
+            <div className="relative -mt-10 rounded-xl bg-[#162334] sm:absolute sm:top-0 sm:right-10 ">
               <div className="p-4 text-sm">
                 Let&apos;s talk about your new idea 💡
               </div>
-              <div className="border-x-[20px] border-t-[20px] border-x-transparent border-t-[#162334] h-0 w-0 absolute -bottom-4 left-4"></div>
+              <div className="absolute -bottom-4 left-4 h-0 w-0 border-x-[20px] border-t-[20px] border-x-transparent border-t-[#162334]"></div>
             </div>
           </div>
         </div>
-        <div className="basis-1/2 w-full">
+        <div className="w-full basis-1/2">
           <form
             onSubmit={handleSubmit(onsubmit)}
-            className="space-y-6 max-w-md"
+            className="max-w-md space-y-6"
           >
             <div className="relative flex flex-col justify-start space-y-2">
               <label
                 htmlFor="name"
-                className={`text-base sm:text-lg font-semibold ${
-                  errors.name ? "text-red-600 form-error" : ""
+                className={`text-base font-semibold sm:text-lg ${
+                  errors.name ? "form-error text-red-600" : ""
                 }`}
               >
                 Name
@@ -109,19 +108,19 @@ const ContactSection = () => {
               <input
                 id="name"
                 {...register("name", { required: "Please fill in your name" })}
-                className={`bg-background text-sm border-[4px] sm:border-[6px] sm:text-base rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0  autofill:bg-background transition-all  placeholder:font-semibold ${
+                className={`h-14 w-full rounded-xl border-[4px] border-[#272727] bg-background p-4 text-sm transition-all placeholder:font-semibold autofill:bg-background focus:outline-0 active:outline-0  sm:h-16 sm:border-[6px]  sm:text-base ${
                   errors.name
-                    ? "border-red-600 placeholder:text-red-800 form-error"
+                    ? "form-error border-red-600 placeholder:text-red-800"
                     : "focus:border-[#3d3d3d]"
                 }`}
                 placeholder="Your Name"
               />
             </div>
-            <div className="flex relative flex-col justify-start space-y-2">
+            <div className="relative flex flex-col justify-start space-y-2">
               <label
                 htmlFor="email"
-                className={`text-base sm:text-lg font-semibold ${
-                  errors.email ? "text-red-600 form-error" : ""
+                className={`text-base font-semibold sm:text-lg ${
+                  errors.email ? "form-error text-red-600" : ""
                 }`}
               >
                 Contact Email
@@ -137,14 +136,14 @@ const ContactSection = () => {
                   },
                 })}
                 placeholder="Your Email"
-                className={`bg-background text-sm border-[4px] sm:border-[6px] sm:text-base rounded-xl p-4 border-[#272727] h-14 sm:h-16 w-full focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
+                className={`h-14 w-full rounded-xl border-[4px] border-[#272727] bg-background p-4 text-sm transition-all placeholder:font-semibold autofill:bg-background focus:outline-0 active:outline-0 sm:h-16 sm:border-[6px] sm:text-base ${
                   errors.email
-                    ? "border-red-600 placeholder:text-red-800 text-red-600 form-error"
+                    ? "form-error border-red-600 text-red-600 placeholder:text-red-800"
                     : "focus:border-[#3d3d3d]"
                 }`}
               />
               {errors.email?.type === "pattern" && (
-                <span className="absolute right-4 -bottom-6 text-xs text-red-600 font-medium">
+                <span className="absolute right-4 -bottom-6 text-xs font-medium text-red-600">
                   {errors.email?.message}
                 </span>
               )}
@@ -152,8 +151,8 @@ const ContactSection = () => {
             <div className="flex flex-col justify-start space-y-2">
               <label
                 htmlFor="message"
-                className={`text-base sm:text-lg font-semibold ${
-                  errors.message ? "text-red-600 form-error" : ""
+                className={`text-base font-semibold sm:text-lg ${
+                  errors.message ? "form-error text-red-600" : ""
                 }`}
               >
                 Message
@@ -163,9 +162,9 @@ const ContactSection = () => {
                 {...register("message", {
                   required: "Please fill in your messaage",
                 })}
-                className={`bg-background h-32 lg:h-40 text-sm border-[4px] sm:border-[6px] rounded-xl p-4 border-[#272727] w-full resize-none focus:outline-0 active:outline-0 autofill:bg-background transition-all placeholder:font-semibold ${
+                className={`h-32 w-full resize-none rounded-xl border-[4px] border-[#272727] bg-background p-4 text-sm transition-all placeholder:font-semibold autofill:bg-background focus:outline-0 active:outline-0 sm:border-[6px] lg:h-40 ${
                   errors.message
-                    ? "border-red-600 placeholder:text-red-800 form-error"
+                    ? "form-error border-red-600 placeholder:text-red-800"
                     : "focus:border-[#3d3d3d]"
                 }`}
                 placeholder="I'd like to talk to you about..."

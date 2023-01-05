@@ -6,7 +6,7 @@ import SlidingHeading from "./SlidingHeading";
 const WorkSection = () => {
   return (
     <section
-      className="scroll-mt-20 my-14 xs:my-20 sm:my-20 xl:work-container "
+      className="xl:work-container my-14 scroll-mt-20 xs:my-20 sm:my-20 "
       id="work"
     >
       <SlidingHeading dataText="My Works My Works My Works My Works My Works My Works">
@@ -26,7 +26,7 @@ const WorkSection = () => {
           <SplideSlide>
             <ProjectSlide
               image="/project2.png"
-              brief="I helped revcash by designing various brand recognition assets for thier mobile app like thier logo, playstore screenshots."
+              brief="I helped revcash by designing various brand recognition assets for their mobile app like their logo, playstore screenshots."
               tags={["Brand Assets Design"]}
               project_name="RevCash"
               href="https://play.google.com/store/apps/details?id=net.revcash"
