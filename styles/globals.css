@@ -104,6 +104,24 @@ select:-webkit-autofill:focus {
   @apply bg-gray-300 cursor-pointer;
 }
 
+.scrollbar-work-section::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+.scrollbar-work-section::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+/* Handle */
+.scrollbar-work-section::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-lg;
+}
+/* Handle on hover */
+.scrollbar-work-section::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-300;
+}
+
 #blog-post-body img {
   @apply rounded-xl overflow-hidden my-4;
 }

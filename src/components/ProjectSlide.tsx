@@ -1,5 +1,6 @@
 import GradientButton from "./GradientButton";
 import ProjectTags from "./ProjectTags";
+import ExternalLink from "./svgs/ExternalLink";
 
 interface Props {
   image: string;
@@ -19,31 +20,34 @@ const ProjectSlide = ({
   href,
 }: Props) => {
   return (
-    <div className="px-6 sm:px-0 first:pl-4 last:pl-4 max-w-[100vw] sm:max-w-[50vw] md:max-w-[60vw] lg:max-w-[640px]">
+    <div className="max-w-[100vw] px-6 first:pl-4 last:pl-4 sm:max-w-[50vw] sm:px-0 md:max-w-[60vw] lg:max-w-[640px]">
       <div
-        className="flex flex-col md:items-stretch justify-between md:flex-row mx-auto bg-no-repeat bg-cover rounded-2xl min-h-[350px] max-h-[350px] overflow-hidden hover:cursor-grab active:cursor-grabbing"
+        className="flex max-h-[350px] min-h-[350px] items-end  overflow-hidden rounded-2xl bg-cover bg-no-repeat sm:mx-auto sm:justify-between"
         style={{
           backgroundImage: `url(${image})`,
         }}
       >
-        <div className="basis-[40%]"></div>
         <div
-          className={`md:basis-[60%] flex flex-col justify-between pt-12 pb-4 px-4 md:px-0 md:py-16 bg-gradient-to-b md:bg-gradient-to-r space-y-4 ${
-            gradientClasses || "from-transparent via-gray-800 to-gray-800 "
-          }`}
+          className={`space-y-4 bg-gradient-to-b from-transparent via-background/80 to-background/90 px-4 pt-6 pb-4 sm:flex sm:flex-col sm:justify-between`}
         >
-          <p className="text-2xl sm:text-3xl md:text-4xl font-bold">
+          <p className="text-2xl font-bold drop-shadow-lg sm:text-3xl md:text-4xl">
             {project_name}
           </p>
-          <div className="">
+          <div className="-ml-1">
             {tags.map((el, idx) => (
               <ProjectTags key={idx} text={el} />
             ))}
           </div>
-          <p className="text-sm text-gray-300 font-medium">{brief}</p>
+          <p className="text-sm font-semibold text-gray-300">{brief}</p>
           <div>
-            <a href={href} target="_blank" rel="noopener noreferrer">
-              <GradientButton text="Vist Site" fromProject />
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-1 text-white"
+            >
+              <span className="">Visit Site</span>{" "}
+              <ExternalLink size={16} className="scale-[0.6]" />
             </a>
           </div>
         </div>

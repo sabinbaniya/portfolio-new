@@ -25,23 +25,14 @@ const WorkSection = () => {
           </SplideSlide>
           <SplideSlide>
             <ProjectSlide
-              image="/blog.png"
-              brief="A website for writing and reading blog posts, that supports mardown & syntax highlighting."
-              tags={["Development"]}
-              project_name="Blog"
-              href="https://reimageined-telegram.vercel.app"
+              image="/project2.png"
+              brief="I helped revcash by designing various brand recognition assets for thier mobile app like thier logo, playstore screenshots."
+              tags={["Brand Assets Design"]}
+              project_name="RevCash"
+              href="https://play.google.com/store/apps/details?id=net.revcash"
+              gradientClasses="from-neutral-900/10 to-neutral-900"
             />
           </SplideSlide>
-          {/* <SplideSlide>
-            <ProjectSlide
-              image="/smart-pdr.png"
-              brief="Built the new website to better represent smartpdr as a paintless dent repair company"
-              tags={["Design", "Development"]}
-              project_name="Smart PDR"
-              href="https://smartpdr.us"
-              gradientClasses="from-transparent via-gray-700 to-gray-800"
-            />
-          </SplideSlide> */}
         </ProjectSlider>
       </section>
     </section>
