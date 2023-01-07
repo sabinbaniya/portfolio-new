@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ["cdn.hashnode.com"],
   },
+  generateBuildId: () => "BUILD_ID",
 };
 
 module.exports = nextConfig;

@@ -20,9 +20,22 @@ const jetbrainMono = JetBrains_Mono({
   display: "swap",
 });
 
-// import "highlight.js/styles/github.css";
-
 export const getStaticPaths: GetStaticPaths = async () => {
+  const sitemap = require("nextjs-sitemap-generator");
+  const fs = require("fs");
+
+  const BUILD_ID = fs.readFileSync(".next/BUILD_ID").toString();
+
+  sitemap({
+    baseUrl: "https://sabinbaniya.com.np",
+    // If you are using Vercel platform to deploy change the route to /.next/serverless/pages
+    pagesDirectory:
+      __dirname + "/.next/serverless/pages/" + BUILD_ID + "/pages",
+    targetDirectory: "public/",
+    ignoredExtensions: ["js", "map"],
+    ignoredPaths: ["assets"], // Exclude everything that isn't static page
+  });
+
   const { data } = await client.query({
     query: gql`
       {
@@ -180,12 +193,12 @@ const Slugs = (props: any) => {
         title={props.post.data.post.title}
         blogPosts={props.data.user.publication.posts}
       >
-        <section className="max-w-3xl mx-auto mt-10 px-4">
+        <section className="mx-auto mt-10 max-w-3xl px-4">
           <div className="flex space-x-4">
             {props.post.data.post.tags.map((el: any) => (
               <Fragment key={el.slug}>
                 <code
-                  className={`${el.slug} px-2 rounded-full font-semibold font-`}
+                  className={`${el.slug} font- rounded-full px-2 font-semibold`}
                 >
                   #{el.name}
                 </code>
@@ -197,9 +210,9 @@ const Slugs = (props: any) => {
             height={1080}
             width={1920}
             alt={props.post.data.post.title}
-            className="rounded-lg mb-8 mt-4"
+            className="mb-8 mt-4 rounded-lg"
           />
-          <div className="text-2xl sm:text-4xl leading-relaxed sm:leading-[1.7] font-bold my-8">
+          <div className="my-8 text-2xl font-bold leading-relaxed sm:text-4xl sm:leading-[1.7]">
             <Markdown
               rehypePlugins={[rehypeRaw]}
               components={{
