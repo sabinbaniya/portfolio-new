@@ -13,6 +13,7 @@
     "@next/font": "^13.0.4",
     "@splidejs/react-splide": "^0.7.12",
     "framer-motion": "^7.6.7",
+    "glob": "^8.0.3",
     "graphql": "^16.6.0",
     "highlight.js": "^11.7.0",
     "mongoose": "^6.8.0",
@@ -27,6 +28,7 @@
     "rehype-raw": "^6.1.1"
   },
   "devDependencies": {
+    "@types/glob": "^8.0.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",

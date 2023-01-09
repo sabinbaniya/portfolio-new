@@ -21,21 +21,6 @@ const jetbrainMono = JetBrains_Mono({
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const sitemap = require("nextjs-sitemap-generator");
-  const fs = require("fs");
-
-  const BUILD_ID = fs.readFileSync(".next/BUILD_ID").toString();
-
-  sitemap({
-    baseUrl: "https://sabinbaniya.com.np",
-    // If you are using Vercel platform to deploy change the route to /.next/serverless/pages
-    pagesDirectory:
-      __dirname + "/.next/serverless/pages/" + BUILD_ID + "/pages",
-    targetDirectory: "public/",
-    ignoredExtensions: ["js", "map"],
-    ignoredPaths: ["assets"], // Exclude everything that isn't static page
-  });
-
   const { data } = await client.query({
     query: gql`
       {
@@ -53,8 +38,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = data.user.publication.posts.map(
     (el: any) => `/blogs/${el.slug}`
   );
-
-  // console.log(paths);
 
   return {
     paths,
