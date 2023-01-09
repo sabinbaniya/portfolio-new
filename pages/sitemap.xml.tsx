@@ -10,28 +10,30 @@ const Sitemap = () => {
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const BASE_URL = "https://sabinbaniya.com.np";
 
-  const pagesDir = "pages/**/*.tsx";
-  let pagesPaths = glob.sync(pagesDir);
+  //   const pagesDir = "pages/**/*.tsx";
+  //   let pagesPaths = glob.sync(pagesDir);
 
-  pagesPaths = pagesPaths
-    .filter((path) => !path.includes("["))
-    .filter((path) => !path.includes("/_"))
-    .filter((path) => !path.includes("404"))
-    .filter((path) => !path.includes("api"))
-    .filter((path) => !path.includes("sitemap.xml.tsx"));
+  //   pagesPaths = pagesPaths
+  //     .filter((path) => !path.includes("["))
+  //     .filter((path) => !path.includes("/_"))
+  //     .filter((path) => !path.includes("404"))
+  //     .filter((path) => !path.includes("api"))
+  //     .filter((path) => !path.includes("sitemap.xml.tsx"));
 
-  console.log(pagesPaths);
+  //   console.log(pagesPaths);
 
-  const staticPaths = pagesPaths
-    .map((staticPagePath) => staticPagePath.replace("pages/", ""))
-    .filter((staticPage) => {
-      return !["api"].includes(staticPage);
-    })
-    .map((staticPagePath) => {
-      console.log(staticPagePath);
+  //   const staticPaths = pagesPaths
+  //     .map((staticPagePath) => staticPagePath.replace("pages/", ""))
+  //     .filter((staticPage) => {
+  //       return !["api"].includes(staticPage);
+  //     })
+  //     .map((staticPagePath) => {
+  //       console.log(staticPagePath);
 
-      return `${BASE_URL}/${staticPagePath.replace("index.tsx", "")}`;
-    });
+  //       return `${BASE_URL}/${staticPagePath.replace("index.tsx", "")}`;
+  //     });
+
+  const staticPaths = [`${BASE_URL}/`, `${BASE_URL}/blogs`];
 
   const { data } = await client.query({
     query: gql`
